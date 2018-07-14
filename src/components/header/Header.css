@@ -1,0 +1,28 @@
+.header {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    font-family: "Helvetica Neue", sans-serif;
+    justify-content: space-between;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    padding: 0 15px;
+}
+
+h4 {
+    font-style: italic;
+    margin: 0 15rem 0 0;
+}
+
+p {
+    font-style: oblique;
+    margin: 0;
+}
