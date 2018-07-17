@@ -3021,6 +3021,10 @@ gzip-size@3.0.0:
   dependencies:
     duplexer "^0.1.1"
 
+halfred@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/halfred/-/halfred-1.0.0.tgz#742d45b4d664bc63a43d6016802e62414cadda22"
+
 handle-thing@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
@@ -6625,6 +6629,12 @@ tough-cookie@~2.3.3:
 tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+
+traverson-hal@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/traverson-hal/-/traverson-hal-6.0.0.tgz#253935fd69568de0655844875c7f87432991526c"
+  dependencies:
+    halfred "1.0.0"
 
 traverson@^6.0.3:
   version "6.0.3"

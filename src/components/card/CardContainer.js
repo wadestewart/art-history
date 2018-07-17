@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { config } from '../../config'
 import Card from './Card'
 
-const   request         = require('superagent')
-
 class CardContainer extends Component {
 
     state = {
@@ -12,10 +10,15 @@ class CardContainer extends Component {
         timer:          10,
     }
 
-    componentDidMount = () => {
+    componentDidMount = (token) => {
+        const request           = require('superagent')
+        const traverson         = require('traverson')
+        const JsonHalAdapter    = require('traverson-hal')
+        let xappToken = token
 
-        tr
-    
+        traverson.registerMediaType(JsonHalAdapter.mediaType, JsonHalAdapter)
+        let api = 
+
         request
             .post(config.apiUrl)
             .send({
@@ -23,10 +26,13 @@ class CardContainer extends Component {
                 client_secret : config.clientSecret
             })
             .then((res) => {
-                let token = config.xappToken
-                token = res.body.token
-                requestWithToken(token)
+                config.xappToken = res.body.token
+                this.componentDidMount(config.xappToken)
             })
+
+    }
+
+    componentWillUnmount = () => {
 
     }
 
