@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { config } from '../../config'
 import Card from './Card'
+
+const   request         = require('superagent')
 
 class CardContainer extends Component {
 
@@ -10,24 +13,21 @@ class CardContainer extends Component {
     }
 
     componentDidMount = () => {
-        const clientID = config.clientID
-        const clientSecret = config.clientSecret
-        const apiUrl = config.apiUrl
 
-        fetch(apiUrl, 
-        {
-            method: 'POST',
-            headers: {
-                client_id: clientID,
-                client_secret: clientSecret
-            }
-        })
-            .then(function(res) {
-                console.log(res)
+        
+    
+        request
+            .post(config.apiUrl)
+            .send({
+                client_id : config.clientID,
+                client_secret : config.clientSecret
             })
-            .catch(function(err) {
-                console.log(err)
+            .then((res) => {
+                let token = config.xappToken
+                token = res.body.token
+                requestWithToken(token)
             })
+
     }
 
     render() {
