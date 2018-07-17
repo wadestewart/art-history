@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../header/Header'
+import CardContainer from '../card/CardContainer'
 import './App.css'
 
 class App extends Component {
@@ -7,9 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <h1>Hello World</h1>
+        <CardContainer />
       </div>
-    );
+    )
   }
 }
 
