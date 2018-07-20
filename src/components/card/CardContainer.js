@@ -13,7 +13,7 @@ class CardContainer extends Component {
 
     componentDidMount = () => {
 
-        fetch(`${API.apiUrl}/${API.apiResource}/465906?q=width:>1500&apikey=${API.apiKey}`)
+        fetch(`${API.apiUrl}/${API.apiResource}?size=10&apikey=${API.apiKey}`)
             .then(res => res.json())
             .then(data => this.setState({ artworks: data }))
             .catch(err => console.log(err))
