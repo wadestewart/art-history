@@ -7,11 +7,7 @@ class Header extends Component {
             <div className="header">
                 <nav>
                     <h1>Art History</h1>
-                    <h4>An étude en art: Equal parts ignorance and bliss</h4>
-                    <p>Abstract</p>
-                    <p>Figurative</p>
-                    <p>Landscape</p>
-                    <p>Portraiture</p>
+                    <h3>Equal parts ignorance and bliss</h3>
                 </nav>
             </div>
         )
