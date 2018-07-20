@@ -11,6 +11,46 @@ class CardContainer extends Component {
         timer:          10,
     }
 
+    componentDidMount = () => {
+
+        fetch(`${API.apiUrl}/${API.apiResource}/465906?q=width:>1500&apikey=${API.apiKey}`)
+            .then(res => res.json())
+            .then(data => this.setState({ artworks: data }))
+            .catch(err => console.log(err))
+    }
+
+    // componentWillUnmount = () => {
+
+    // }
+
+    render() {
+        let card = this.state.artworks
+        // console.log(artUrl)
+
+        // const artists = card.map((artist) => {
+        //     console.log(artist)
+        //     return (
+        //         <h1>{artist.name}</h1>
+        //         <Card
+        //          card={card}
+        //          
+        //         />
+        //     )
+        // })
+
+        return (
+            <div className="container">
+                {card && (
+                    <Card card={card} />
+                )}
+            </div>
+        )
+    }
+}
+
+export default CardContainer
+
+// This is the request to Artys's API - need to add superagent, traverson traverson-hal to use
     // componentDidMount = () => {
     //     const request           = require('superagent')
 
@@ -54,42 +94,3 @@ class CardContainer extends Component {
     //         })
 
     // }
-
-    componentDidMount = () => {
-
-        fetch(`${API.apiUrl}/${API.apiResource}/465906?q=width:>1500&apikey=${API.apiKey}`)
-            .then(res => res.json())
-            .then(data => this.setState({ artworks: data.iiifbaseuri }))
-            .catch(err => console.log(err))
-    }
-
-    // componentWillUnmount = () => {
-
-    // }
-
-    render() {
-        let card = this.state.artworks
-        let artUrl = card + '/square/full/0/default.jpg'
-        // console.log(artUrl)
-
-        // const artists = card.map((artist) => {
-        //     console.log(artist)
-        //     return (
-        //         <h1>{artist.name}</h1>
-        //         <Card
-        //          artist={artist}
-        //         />
-        //     )
-        // })
-
-        return (
-            <div className="container">
-                {card && (
-                    <Card card={card} artUrl={artUrl}/>
-                )}
-            </div>
-        )
-    }
-}
-
-export default CardContainer
