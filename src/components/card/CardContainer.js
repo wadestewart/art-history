@@ -20,17 +20,6 @@ class CardContainer extends Component {
     render() {
         let card = this.state.artworks.items
 
-        // const artworks = card.map((artwork) => {
-        //     console.log(artwork)
-            // return (
-            //     <h1>{artist.name}</h1>
-            //     <Card
-            //      card={card}
-                 
-            //     />
-            // )
-        // })
-
         return (
             <div className="container">
                 {card && (
