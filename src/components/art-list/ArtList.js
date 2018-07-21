@@ -14,7 +14,7 @@ class ArtList extends Component {
                 <ArtColumn
                     artwork={artwork}
                     key={artwork.id}
-                    image={artwork.images[0].sq.url}
+                    image={artwork.images[0].z.url}
                     title={artwork.title}
                     medium={artwork.medium}
                 />

@@ -8,7 +8,7 @@ class ArtColumn extends Component {
                     <img src={this.props.image} alt="" />
                 </figure>
                 <div className="art-summary">
-                    <h1>{this.props.title}</h1>
+                    <h2>{this.props.title}</h2>
                     <p>{this.props.medium}</p>
                 </div>
             </div>
