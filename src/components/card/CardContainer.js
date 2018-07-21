@@ -5,37 +5,30 @@ import Card from './Card'
 class CardContainer extends Component {
 
     state = {
-        // artwork: undefined,
         artworks:        [],
-        // currentIndex:   0,
-        timer:          10,
+        timer:          10
     }
 
     componentDidMount = () => {
 
-        fetch(`${API.apiUrl}/${API.apiResource}?size=10&apikey=${API.apiKey}`)
+        fetch(`${API.apiUrl}?query=Degas&reusability=open&media=true&wskey=${API.apiKey}`)
             .then(res => res.json())
             .then(data => this.setState({ artworks: data }))
             .catch(err => console.log(err))
     }
 
-    // componentWillUnmount = () => {
-
-    // }
-
     render() {
-        let card = this.state.artworks
-        // console.log(artUrl)
+        let card = this.state.artworks.items
 
-        // const artists = card.map((artist) => {
-        //     console.log(artist)
-        //     return (
-        //         <h1>{artist.name}</h1>
-        //         <Card
-        //          card={card}
-        //          
-        //         />
-        //     )
+        // const artworks = card.map((artwork) => {
+        //     console.log(artwork)
+            // return (
+            //     <h1>{artist.name}</h1>
+            //     <Card
+            //      card={card}
+                 
+            //     />
+            // )
         // })
 
         return (

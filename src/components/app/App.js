@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../header/Header'
-import CardContainer from '../card/CardContainer'
+import ArtListContainer from '../art-list/ArtListContainer'
 import './App.css'
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <CardContainer />
+        <ArtListContainer />
       </div>
     )
   }

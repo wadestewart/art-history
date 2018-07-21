@@ -4,10 +4,11 @@ class Card extends Component {
 
     render() {
         let card = this.props.card
-        // let url = card.iiifbaseuri + '/square/full/0/default.jpg'
         console.log(card)
-        // console.log(url)
-        // const artUrl = card._links.thumbnail.href
+
+        const artworks = card.map((artwork) => {
+            console.log(artwork)
+        })
 
         return (
             <div>
