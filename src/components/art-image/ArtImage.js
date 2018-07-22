@@ -1,10 +1,11 @@
 import React from 'react'
 
 function ArtImage(props) {
+    // console.log(props.artwork)
     return (
-        <div>
-            
-        </div>
+        <figure>
+            {/* <img src= alt="" /> */}
+        </figure>
     )
 }
 
