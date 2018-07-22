@@ -7,6 +7,7 @@ class App extends Component {
 
   state = {
     artworks: [],
+    images: [],
     current:  {}
   }
 
@@ -18,18 +19,18 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  handleGetImages = (artwork) => {
+    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+  }
+
   componentDidMount = () => {
-
-    this.getObjectsWithID = (objectData) => {
-      // console.log(objectData.objects)
-      this.setState({ artworks: objectData.objects})
-    }
-
 
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}`)
         .then(res => res.json())
-        // .then(data => this.setState({ artworks: data.period }))
-        .then(data => this.getObjectsWithID(data))
+        .then(data => this.setState({ artworks: data.objects }))
         // .then(data => console.log(data))
         .catch(err => console.log(err))
   }
@@ -43,6 +44,7 @@ class App extends Component {
         <Header />
         <ArtList
           artworks={artworks}
+          onGetImages={this.handleGetImages}
         />
       </div>
     )
