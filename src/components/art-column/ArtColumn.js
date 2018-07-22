@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 class ArtColumn extends Component {
+
+    componentDidMount = (props) => {
+        // console.log(this.props.artwork)
+    }
+
     render() {
         return (
             <div className="art-column">

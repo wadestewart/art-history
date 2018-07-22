@@ -8,24 +8,20 @@ class ArtList extends Component {
         // console.log(art)
 
         const artworks = art.map((artwork, key) => {
-            console.log(artwork)
+            // console.log(artwork)
 
             return (
                 <ArtColumn
                     artwork={artwork}
                     key={artwork.id}
-                    // image={artwork.images[0].z.url}
-                    // title={artwork.title}
+                    title={artwork.title}
+                    medium={artwork.medium}
                 />
             )
         })
 
         return (
             <div className="film-list">
-            <h1>{art.name}</h1>
-            <figure>
-                    <img src={art.url} alt="" />
-            </figure>
                 {artworks}
             </div>
         )
