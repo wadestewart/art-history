@@ -4,19 +4,6 @@ import Card from './Card'
 
 class CardContainer extends Component {
 
-    state = {
-        artworks:        [],
-        timer:          10
-    }
-
-    componentDidMount = () => {
-
-        fetch(`${API.apiUrl}?query=Degas&reusability=open&media=true&wskey=${API.apiKey}`)
-            .then(res => res.json())
-            .then(data => this.setState({ artworks: data }))
-            .catch(err => console.log(err))
-    }
-
     render() {
         let card = this.state.artworks.items
 
