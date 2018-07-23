@@ -15,7 +15,6 @@ class ArtList extends Component {
                     key={artwork.id}
                     title={artwork.title}
                     medium={artwork.medium}
-                    onGetImages={() => this.props.onGetImages(artwork)}
                 />
             )
         })

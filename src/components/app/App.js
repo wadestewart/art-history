@@ -36,7 +36,7 @@ class App extends Component {
 
   render() {
     let artworks = this.state.artworks
-    // console.log(artworks)
+    console.log(artworks)
 
     return (
       <div className="art-library">
