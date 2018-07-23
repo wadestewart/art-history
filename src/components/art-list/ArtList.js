@@ -9,7 +9,6 @@ class ArtList extends Component {
 
         const artworks = art.map((artwork, key) => {
             // console.log(artwork)
-
             return (
                 <ArtColumn
                     artwork={artwork}
