@@ -15,46 +15,33 @@ class App extends Component {
 
   componentDidMount = () => {
      
-    const aPromise = fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
-
-    aPromise.then(res => {
-      res.json()
-        .then(data => {
-          // console.log(data)
-          this.setState({ artworks: data.objects })
-          // console.log(this.state.artworks)
-          this.state.artworks.map((artwork) => {
-            // console.log(artwork.id)
-            fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
-              .then(res => res.json())
-              .then(data => {
-                // console.log(data.images[0])
-                let newImage = data.images[0]
-                this.setState({ images: this.state.images.concat(newImage)})
-              })
+    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
+      .then(res => {
+        res.json()
+          .then(data => {
+            // console.log(data)
+            this.setState({ artworks: data.objects })
+            // console.log(this.state.artworks)
+            this.state.artworks.map((artwork) => {
+              // console.log(artwork.id)
+              return fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
+                .then(res => res.json())
+                .then(data => {
+                  // console.log(data.images[0])
+                  let newImage = data.images[0]
+                  this.setState({ images: this.state.images.concat(newImage)})
+                })
+            })
           })
-        })
-    })
-    
-    aPromise.catch(err => console.log(err))
-    
-    // const images = artworks.map((artwork, key) => {
-    //   return (
-    //     artwork
-    //   )
-    // })
-
-    // fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${this.state.artworks.id}`)
-    // const images = art.map((image, key) => {
-      //   this.setState({ images: image})
-      // })
-      // .then(art => console.log(art))
+      })
+      .catch(err => console.log(err))
   }
       
   render() {
     let artworks = this.state.artworks
+    let images = this.state.images
     // console.log(artworks)
-    console.log(this.state.images)
+    // console.log(this.state.images)
 
     return (
       <div>
@@ -62,6 +49,7 @@ class App extends Component {
         <div className="art-library">
           <ArtList
             artworks={artworks}
+            images={images}
           />
           <ArtDetail
 
