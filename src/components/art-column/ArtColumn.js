@@ -10,12 +10,11 @@ class ArtColumn extends Component {
 
     componentDidMount = () => {
         let artwork = this.props.artwork
-        // const images = this.state.images.slice()
     
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
             .then(res => res.json())
-            .then((data) => {
-                // console.log(data.images[0].z.url)
+            .then(data => {
+                // console.log(data.images)
                 let newImage = data.images[0].z.url
                 this.setState({ images: this.state.images.concat(newImage) })
             })
@@ -24,10 +23,10 @@ class ArtColumn extends Component {
 
     render() {
         let images = this.state.images
-        console.log(images)
+        // console.log(images)
 
         return (
-            <div className="art-column" onLoad={this.props.onGetImages}>
+            <div className="art-column">
                 <ArtImage
                     imageUrl={images}
                 />
