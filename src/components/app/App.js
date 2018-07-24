@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import Header from '../header/Header'
 import { API } from '../../config'
 import ArtList from '../art-list/ArtList'
+import ArtDetail from '../art-detail/ArtDetail'
 
 class App extends Component {
   
-  // I can create an array with an empty object { key: '', key: '' } and chain promises in the fetch response to fetch image data - use concat (not push) in React.
+  // I can create an array with an empty object and chain promises in the fetch response to fetch image data - use concat (not push) in React.
   state = {
     artworks: [],
     current:  {}
@@ -24,11 +25,16 @@ class App extends Component {
     // console.log(artworks)
 
     return (
-      <div className="art-library">
+      <div>
         <Header />
-        <ArtList
-          artworks={artworks}
-        />
+        <div className="art-library">
+          <ArtList
+            artworks={artworks}
+          />
+          <ArtDetail
+
+          />
+        </div>
       </div>
     )
   }

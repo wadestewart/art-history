@@ -20,7 +20,7 @@ class ArtList extends Component {
         })
 
         return (
-            <div className="film-list">
+            <div className="art-list">
                 {artworks}
             </div>
         )
