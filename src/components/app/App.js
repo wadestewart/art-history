@@ -15,22 +15,29 @@ class App extends Component {
 
   componentDidMount = () => {
      
-    const a = fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
-        a.then(res => {
-          res.json()
-            .then(data => {
-              console.log(data)
-              this.setState({
-                    artworks: data.objects
-                  })
-            })
-            // a.then(data => this.setState({ artworks: data.objects }))
-        })
- 
-        a.catch(err => console.log(err))
-    
-    // console.log(this.state.artworks)
+    const aPromise = fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
 
+    aPromise.then(res => {
+      res.json()
+        .then(data => {
+          // console.log(data)
+          this.setState({ artworks: data.objects })
+          // console.log(this.state.artworks)
+          this.state.artworks.map((artwork) => {
+            // console.log(artwork.id)
+            fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
+              .then(res => res.json())
+              .then(data => {
+                // console.log(data.images[0])
+                let newImage = data.images[0]
+                this.setState({ images: this.state.images.concat(newImage)})
+              })
+          })
+        })
+    })
+    
+    aPromise.catch(err => console.log(err))
+    
     // const images = artworks.map((artwork, key) => {
     //   return (
     //     artwork
@@ -47,6 +54,7 @@ class App extends Component {
   render() {
     let artworks = this.state.artworks
     // console.log(artworks)
+    console.log(this.state.images)
 
     return (
       <div>
