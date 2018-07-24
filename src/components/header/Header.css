@@ -6,7 +6,7 @@
 }
 
 nav {
-    align-items: baseline;
+    align-items: center;
     display: flex;
     font-family: "Helvetica Neue", sans-serif;
     justify-content: space-between;
@@ -16,7 +16,7 @@ nav {
 
 h1 {
     font-size: 2rem;
-    margin: 0.5rem 2rem; 
+    margin: 0.3rem 2rem 0.7rem 2rem; 
     padding: 0 5px;
 }
 
