@@ -5,33 +5,29 @@ class ArtList extends Component {
     
     render() {
         let art = this.props.artworks
-        // let pics = this.props.images
+        let pics = this.props.images
         // console.log(pics)
         // console.log(art)
 
-        // const images = pics.map(function(image) {
-        //     console.log(image)
-        // })
+        const images = pics.map(function(image) {
+            // console.log(image)
+            return image
+        })
 
         const artworks = art.map((artwork, key) => {
             // console.log(artwork)
             // images.map((image, key) => {
             //     console.log(image.z.url)
             // })
-            return (
-                <ArtColumn
-                    artwork={artwork}
-                    key={artwork.id}
-                    title={artwork.title}
-                    medium={artwork.medium}
-                    // image={}
-                />
-            )
+            return artwork
         })
 
         return (
             <div className="art-list">
-                {artworks}
+                <ArtColumn
+                    artworks={artworks}
+                    images={images}
+                />
             </div>
         )
     }

@@ -1,43 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ArtImage from '../art-image/ArtImage'
-import { API } from '../../config'
 
-class ArtColumn extends Component {
+function ArtColumn(props) {
+    let images = props.images
+    let artworks = props.artworks
+    console.log(artworks)
 
-    state = {
-        images: []
-    }
+    return (
+        <div className="art-column">
+            <ArtImage
+                // imageUrl={images}
+            />
 
-    componentDidMount = () => {
-        let artwork = this.props.artwork
-    
-        fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data.images)
-                let newImage = data.images[0].z.url
-                this.setState({ images: this.state.images.concat(newImage) })
-            })
-            .catch(err => console.log(err))
-    }
-
-    render() {
-        let images = this.state.images
-        // console.log(images)
-
-        return (
-            <div className="art-column">
-                <ArtImage
-                    imageUrl={images}
-                />
-
-                <div className="art-summary">
-                    <h2>{this.props.title}</h2>
-                    <p>{this.props.medium}</p>
-                </div>
+            <div className="art-summary">
+                {/* <h2>{this.props.title}</h2>
+                <p>{this.props.medium}</p> */}
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default ArtColumn
