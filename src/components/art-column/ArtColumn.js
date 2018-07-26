@@ -3,18 +3,17 @@ import ArtImage from '../art-image/ArtImage'
 
 function ArtColumn(props) {
     let images = props.images
-    let artworks = props.artworks
-    console.log(artworks)
+    // console.log(images)
 
     return (
         <div className="art-column">
             <ArtImage
-                // imageUrl={images}
+                images={images}
             />
 
             <div className="art-summary">
-                {/* <h2>{this.props.title}</h2>
-                <p>{this.props.medium}</p> */}
+                <h2>{props.title}</h2>
+                <p>{props.medium}</p>
             </div>
         </div>
     )
