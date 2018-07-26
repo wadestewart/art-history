@@ -23,12 +23,12 @@ class ArtColumn extends Component {
 
     render() {
         let imageUrls = this.state.imageUrls
-        console.log(imageUrls)
+        // console.log(imageUrls)
 
         return (
             <div className="art-column">
                 <ArtImage
-                    imageUrls={imageUrls}
+                    imageUrl={imageUrls}
                 />
     
                 <div className="art-summary">

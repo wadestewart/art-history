@@ -1,11 +1,11 @@
 import React from 'react'
 
 function ArtImage(props) {
-    console.log(props.imageUrls)
+    // console.log(props.imageUrl)
 
     return (
         <figure>
-            <img src={props.imageUrls[0]} alt="" />                
+            <img src={props.imageUrl} alt="" />                
         </figure>
     )
 }
