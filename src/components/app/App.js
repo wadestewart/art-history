@@ -16,44 +16,44 @@ class App extends Component {
   }
 
   handleDetailsClick = (artwork) => {
-    // let artworks = this.state.artworks
-    console.log('clicked')
+    console.log('Fetching data for ' + artwork.title)
+    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data)
+        this.setState({ current: data.object})
+      })
   }
 
   componentDidMount = () => {
 
-    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
-    .then(res => res.json())
-    // .then(data => console.log(data))
-    .then(data => this.setState({ artworks: data.objects }))
-    .catch(err => console.log(err))
-     
     // fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
-    //   .then(res => {
-    //     res.json()
-    //       .then(data => {
-    //         // console.log(data)
-    //         this.setState({ artworks: data.objects })
-    //         // console.log(this.state.artworks)
-    //         this.state.artworks.map((artwork) => {
-    //           // console.log(artwork.id)
-    //           return fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
-    //             .then(res => res.json())
-    //             .then(data => {
-    //               // console.log(data)
-    //               this.setState({ images: this.state.images.concat(data)})
-    //             })
-    //         })
-    //       })
-    //   })
+    //   .then(res => res.json())
+    //   // .then(data => console.log(data))
+    //   .then(data => this.setState({ artworks: data.objects }))
+    //   .catch(err => console.log(err))
+     
+    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
+      .then(res => {
+        res.json()
+          .then(data => {
+            // console.log(data)
+            this.setState({ artworks: data.objects })
+            // console.log(this.state.artworks)
+            this.state.artworks.map((artwork) => {
+              // console.log(artwork.id)
+              return fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
+                .then(res => res.json())
+                .then(data => {
+                  // console.log(data)
+                  this.setState({ images: this.state.images.concat(data)})
+                })
+            })
+          })
+      })
   }
       
   render() {
-
-    // let artworks = this.state.artworks
-    // let images = this.state.images
-    // console.log(artworks)
-    // console.log(images)
 
     return (
       <div>
@@ -64,7 +64,7 @@ class App extends Component {
             onDetailsClick={this.handleDetailsClick}
           />
           <ArtDetail
-
+            artwork={this.state.current}
           />
         </div>
       </div>
@@ -75,6 +75,3 @@ class App extends Component {
 }
 
 export default App
-
-// This is the url to make a query to CH's exhibition api and return images.
-  // fetch(`${API.apiUrl}?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&query=19th Century&has_images=true`)

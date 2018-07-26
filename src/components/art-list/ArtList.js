@@ -8,6 +8,7 @@ class ArtList extends Component {
         // console.log(images)
 
         const allArtworks = artworks.map((artwork) => {
+            // console.log(artwork)
             return (
                 <ArtColumn
                     artwork={artwork}
