@@ -14,6 +14,7 @@ class ArtList extends Component {
                     key={artwork.id}
                     title={artwork.title}
                     medium={artwork.medium}
+                    onDetailsClick={() => this.props.onDetailsClick(artwork)}
                 />
             )
         })

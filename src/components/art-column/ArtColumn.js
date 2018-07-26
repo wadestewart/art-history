@@ -26,14 +26,13 @@ class ArtColumn extends Component {
         // console.log(imageUrls)
 
         return (
-            <div className="art-column">
+            <div className="art-column" onClick={this.props.onDetailsClick}>
                 <ArtImage
                     imageUrl={imageUrls}
                 />
     
                 <div className="art-summary">
                     <h2>{this.props.artwork.title}</h2>
-                    <p>{this.props.artwork.medium}</p>
                 </div>
             </div>
         )

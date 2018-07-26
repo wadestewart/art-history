@@ -58,6 +58,10 @@ figure {
   background-color: white;
 }
 
+.art-column:hover {
+  cursor: pointer;
+}
+
 .art-summary {
   padding: 0.5em 1.5em;
   background-color: white;
