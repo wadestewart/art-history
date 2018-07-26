@@ -5,10 +5,8 @@ class ArtList extends Component {
     
     render() {
         let artworks = this.props.artworks
-        // console.log(images)
 
         const allArtworks = artworks.map((artwork) => {
-            // console.log(artwork)
             return (
                 <ArtColumn
                     artwork={artwork}
