@@ -30,6 +30,7 @@ class ArtColumn extends Component {
     
                 <div className="art-summary">
                     <h2>{this.props.artwork.title}</h2>
+                    <p>{this.props.artwork.medium}</p>
                 </div>
             </div>
         )

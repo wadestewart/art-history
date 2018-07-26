@@ -10,7 +10,6 @@ class App extends Component {
     this.handleDetailsClick = this.handleDetailsClick.bind(this)
     this.state = {
       artworks: [],
-      images: [],
       current:  {}
     }
   }
@@ -25,21 +24,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-     
+
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=5`)
-      .then(res => {
-        res.json()
-          .then(data => {
-            this.setState({ artworks: data.objects })
-            this.state.artworks.map((artwork) => {
-              return fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
-                .then(res => res.json())
-                .then(data => {
-                  this.setState({ images: this.state.images.concat(data)})
-                })
-            })
-          })
-      })
+      .then(res => res.json())
+      .then(data => this.setState({ artworks: data.objects }))
+      .catch(err => console.log(err))
+     
   }
       
   render() {
@@ -64,3 +54,4 @@ class App extends Component {
 }
 
 export default App
+

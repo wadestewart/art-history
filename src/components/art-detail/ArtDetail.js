@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class ArtDetail extends Component {
-    render() {
-        return (
-            <div className="art-details">
-                
-            </div>
-        )
-    }
+function ArtDetail(props) {
+    console.log(props.artwork)
+    return (
+        <div className="art-details">
+            
+        </div>
+    )
 }
 
 export default ArtDetail
