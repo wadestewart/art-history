@@ -14,8 +14,8 @@ class App extends Component {
 
     this.state = {
       artworks: [],
-      images: {},
-      current:  {}
+      images: [],
+      current:  []
     }
 
   }
@@ -26,14 +26,15 @@ class App extends Component {
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
       .then(res => res.json())
       .then(data => {
-        // console.log(data)
+        // console.log(data.object.images[0])
         this.setState({ current: data.object })
-        this.setState({ images: this.state.current.images})
-        // this.state.current.images.map((image) => {
+        this.setState({ images: this.state.current.images[0] })
+        // this.state.images.map((image) => {
         //   console.log(image)
-        //   return this.setState({ images: image })
+        //   // return this.setState({ images: image })
         // })
       })
+      .catch(err => console.log(err))
 
   }
 

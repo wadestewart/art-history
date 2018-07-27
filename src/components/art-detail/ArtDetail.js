@@ -2,18 +2,22 @@ import React, { Component } from 'react'
 
 class ArtDetail extends Component {
     render() {
-        let bigPics = this.props.images
-        // console.log(bigPics)
-    
-        const largeImages = Object.keys(bigPics).forEach((key) => {
-            // console.log(bigPics[key].b.url)
-            return largeImageUrl = bigPics[0].b.url
-        })
+        console.log(this.props.images)
+        let bigPics = this.props.images.b
+        let bigPicData = []
+        
+        for (let key in bigPics) {
+            // console.log(key, bigPics[key])
+            bigPicData.push(bigPics[key])
+        }
+        let largeImgUrl = bigPicData[0]
+
 
         return (
             <div className="art-details">
-                
-                {largeImages}
+                <figure>
+                    <img src={largeImgUrl} alt="" />
+                </figure>
             </div>
         )
     }
