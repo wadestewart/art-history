@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import ArtColumn from '../art-column/ArtColumn'
 
 class ArtList extends Component {
+
+    state = {
+        filter: 'all'
+    }
     
     render() {
         let artworks = this.props.artworks

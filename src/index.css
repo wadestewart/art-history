@@ -82,14 +82,14 @@ figure {
   margin-top: 0;
 }
 
-.detailed-info {
+.art-detail {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow-y: scroll;
   margin-bottom: 2em;
-  /* min-height: 100vh; */
+  min-height: 100vh;
 }
 
 .large-image {
@@ -112,6 +112,20 @@ figure {
   padding: 0.25em 1.5rem;
 }
 
-.detailed-info > h2 {
+.detailed-info {
+  padding: 1em 1.5em;
+  line-height: 1.45;
+  color: white;
+  background-color: #77e057;
+}
+
+.art-description {
   text-align: center;
 }
+
+.art-credit {
+  color: #000;
+  text-align: center;
+}
+
+

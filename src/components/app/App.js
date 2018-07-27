@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       artworks: [],
       images: [],
-      current:  []
+      current:  {}
     }
 
   }
