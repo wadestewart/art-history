@@ -26,32 +26,35 @@ figure {
 }
 
 .art-library {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
   align-items: stretch;
+  display: flex;
+  height: 100%;
   justify-content: space-around;
+  position: relative;
+  width: 100%;
 }
 
 .art-list {
-  position: relative;
+  background-color: #f0f0f0;
   flex: 1 0 33.333333%;
   height: 100vh;
-  padding: 4.2rem 0;
   overflow-y: scroll;
-  background-color: #f0f0f0;
+  padding: 4.2rem 0;
+  position: relative;
 }
 
 .art-details {
-  flex: 0 1 66.666666%;
   background-color: #f0f0f0;
+  flex: 0 1 66.666666%;
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
 }
 
 .art-column {
   display: grid;
-  position: relative;
   grid-template-columns: 1fr 3fr;
+  position: relative;
 
   margin-bottom: 0.2rem;
   font-size: 0.5em;
@@ -79,7 +82,12 @@ figure {
   margin-top: 0;
 }
 
-.art-detail {
+.art-details {
+  position: relative;
+  overflow-y: scroll;
+}
+
+.detailed-info {
   display: flex;
   min-height: 100vh;
   justify-content: center;

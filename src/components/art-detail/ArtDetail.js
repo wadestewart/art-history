@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ArtDetail(props) {
-    console.log(props.images)
+    // console.log(props.images)
     let bigPics = props.images.b
     let bigPicData = []
     
@@ -12,7 +12,7 @@ function ArtDetail(props) {
     let largeImgUrl = bigPicData[0]
 
     return (
-        <div className="art-detail">
+        <div className="art-details">
             <figure className="large-image">
                 <img src={largeImgUrl} alt="" />
                 <h1 className="piece-title">{props.artwork.title}</h1>
