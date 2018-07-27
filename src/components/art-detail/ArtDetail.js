@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function ArtDetail(props) {
-    // console.log(props.artwork)
-    // console.log(props.images)
+class ArtDetail extends Component {
+    render() {
+        let bigPics = this.props.images
+        // console.log(bigPics)
+    
+        const largeImages = Object.keys(bigPics).forEach((key) => {
+            // console.log(bigPics[key].b.url)
+            return largeImageUrl = bigPics[0].b.url
+        })
 
-    // let largeImage = props.artwork.images[0].b.url
-    // console.log(largeImage)
-    return (
-        <div className="art-details">
-            
-        </div>
-    )
+        return (
+            <div className="art-details">
+                
+                {largeImages}
+            </div>
+        )
+    }
 }
 
 export default ArtDetail
