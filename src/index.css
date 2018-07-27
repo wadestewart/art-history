@@ -13,7 +13,7 @@ html,
 body,
 #root {
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 img {
@@ -38,7 +38,7 @@ figure {
   position: relative;
   flex: 1 0 33.333333%;
   height: 100%;
-  padding: 0.1em 0 0;
+  padding: 3.6em 0 0;
   overflow-y: scroll;
   background-color: #f0f0f0;
 }
@@ -68,6 +68,7 @@ figure {
 }
 
 .art-summary > h1 {
+  color: #000;
   margin-bottom: 0.35em;
 }
 
@@ -76,4 +77,29 @@ figure {
   line-height: 1.35;
   font-weight: 200;
   margin-top: 0;
+}
+
+.art-detail {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  margin-bottom: 2em;
+}
+
+.large-image {
+  position: relative;
+}
+
+.piece-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  color: white;
+  font-size: 4em;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.5));
+  padding: 0.25em 1.5rem;
 }

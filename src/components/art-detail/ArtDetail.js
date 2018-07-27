@@ -12,8 +12,8 @@ function ArtDetail(props) {
     let largeImgUrl = bigPicData[0]
 
     return (
-        <div className="art-details">
-            <figure>
+        <div className="art-detail">
+            <figure className="large-image">
                 <img src={largeImgUrl} alt="" />
                 <h1 className="piece-title">{props.artwork.title}</h1>
             </figure>
