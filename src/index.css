@@ -39,7 +39,7 @@ figure {
   flex: 1 0 33.333333%;
   height: 100vh;
   overflow-y: scroll;
-  padding: 4.2rem 0;
+  padding: 3.5em 0 0.2em 0;
   position: relative;
 }
 
@@ -48,17 +48,17 @@ figure {
   flex: 0 1 66.666666%;
   height: 100vh;
   overflow-y: scroll;
+  padding: 3.5em 0 0.2em 0;
   position: relative;
 }
 
 .art-column {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  position: relative;
-
-  margin-bottom: 0.2rem;
-  font-size: 0.5em;
   background-color: white;
+  display: grid;
+  font-size: 0.5em;
+  grid-template-columns: 1fr 3fr;
+  margin-bottom: 0.2rem;
+  position: relative;
 }
 
 .art-column:hover {
@@ -66,8 +66,8 @@ figure {
 }
 
 .art-summary {
-  padding: 0.5em 1.5em;
   background-color: white;
+  padding: 0.5em 1.5em;
 }
 
 .art-summary > h1 {
@@ -77,37 +77,41 @@ figure {
 
 .art-summary > p {
   font-size: 1.6em;
-  line-height: 1.35;
   font-weight: 200;
+  line-height: 1.35;
   margin-top: 0;
 }
 
-.art-details {
-  position: relative;
-  overflow-y: scroll;
-}
-
 .detailed-info {
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   overflow-y: scroll;
   margin-bottom: 2em;
+  /* min-height: 100vh; */
 }
 
 .large-image {
   position: relative;
 }
 
+.large-image > img {
+  margin: 0 auto;
+}
+
 .piece-title {
   position: absolute;
   bottom: 0;
-  left: 0;
-  margin: 0;
+  margin: 0 auto;
   color: white;
   font-size: 4em;
+  text-align: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   background: linear-gradient(180deg, transparent, rgba(0,0,0,0.5));
   padding: 0.25em 1.5rem;
+}
+
+.detailed-info > h2 {
+  text-align: center;
 }

@@ -18,8 +18,8 @@ function ArtDetail(props) {
                 <h1 className="piece-title">{props.artwork.title}</h1>
             </figure>
             <div className="detailed-info">
-                <h2>{props.artwork.creditline}</h2>
-                <p>{props.artwork.description}</p>
+                <h2>{props.artwork.description}</h2>
+                <h5>{props.artwork.creditline}</h5>
             </div>
         </div>
     )
