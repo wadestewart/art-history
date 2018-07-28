@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { API } from '../../config'
 import ArtImage from '../art-image/ArtImage'
+// import Like from 
 
 class ArtColumn extends Component {
 
@@ -32,6 +33,10 @@ class ArtColumn extends Component {
                     <h2>{this.props.artwork.title}</h2>
                     <p>{this.props.artwork.medium}</p>
                 </div>
+
+                {/* <Like
+
+                /> */}
             </div>
         )
     }    
