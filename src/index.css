@@ -151,11 +151,13 @@ figure {
 }
 
 .art-description {
+  margin: 1rem 0 0 0;
   text-align: center;
 }
 
 .art-credit {
   color: #000;
+  margin: 1rem 0 0 0;
   text-align: center;
 }
 
