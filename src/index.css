@@ -65,6 +65,21 @@ figure {
   cursor: pointer;
 }
 
+.art-column-like {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 0 0.2em;
+  background-color: transparent;
+  transition: all 0.1s linear;
+}
+
+.art-column-like.favorite {
+  color: red;
+}
+
 .art-summary {
   background-color: white;
   padding: 0.5em 1.5em;
