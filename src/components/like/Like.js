@@ -15,6 +15,9 @@ class Like extends Component {
     }
 
     render() {
+
+        // const isLiked = (this.props.isLiked) ? ''
+
         return (
             <div>
 
