@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ArtColumn from '../art-column/ArtColumn'
 
 class ArtList extends Component {
-    
+
     constructor() {
         super()
 
@@ -21,7 +21,7 @@ class ArtList extends Component {
     }
     
     render() {
-        let artworks = (this.state.show === 'likes') ? this.props.likes : this.props.artworks
+        const artworks = (this.state.show === 'likes') ? this.props.likes : this.props.artworks
 
         const allArtworks = artworks.map((artwork) => {
             return (
@@ -38,7 +38,17 @@ class ArtList extends Component {
 
         return (
             <div className="art-list">
+
+                <div className="art-list-show-states">
+
+                    <div  className={`art-list-show-state ${this.state.show === 'all' ? 'is active' : ''}`} onClick={() => this.handleLikeClick('all')}>
+
+                    </div>
+
+                </div>
+
                 {allArtworks}
+
             </div>
         )
     }
