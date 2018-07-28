@@ -10,7 +10,7 @@ class App extends Component {
     super()
 
     this.handleShowLikes = this.handleShowLikes.bind(this)
-    this.handleDetailsClick = this.handleDetailsClick.bind(this)
+    this.handleDetailsClick = this.handleArtDetailClick.bind(this)
 
     this.state = {
       artworks: [],
@@ -35,19 +35,14 @@ class App extends Component {
 
   }
 
-  handleDetailsClick = (artwork) => {
+  handleArtDetailClick = (artwork) => {
 
     console.log('Fetching data for ' + artwork.title)
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
       .then(res => res.json())
       .then(data => {
-        // console.log(data.object.images[0])
         this.setState({ current: data.object })
         this.setState({ images: this.state.current.images[0] })
-        // this.state.images.map((image) => {
-        //   console.log(image)
-        //   // return this.setState({ images: image })
-        // })
       })
       .catch(err => console.log(err))
 
@@ -63,7 +58,6 @@ class App extends Component {
   }
       
   render() {
-    // console.log(this.state.artworks)
 
     return (
       <div>
@@ -73,7 +67,7 @@ class App extends Component {
             artworks={this.state.artworks}
             likes={this.state.likes}
             onShowLikes={this.handleShowLikes}
-            onDetailsClick={this.handleDetailsClick}
+            onArtDetailClick={this.handleArtDetailClick}
           />
           <ArtDetail
             artwork={this.state.current}

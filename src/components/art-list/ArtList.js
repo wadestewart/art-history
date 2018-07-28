@@ -30,7 +30,7 @@ class ArtList extends Component {
                     title={artwork.title}
                     medium={artwork.medium}
                     onShowLikes={() => this.props.onShowLikes(artwork)}
-                    onDetailsClick={() => this.props.onDetailsClick(artwork)}
+                    onArtDetailClick={() => this.props.onArtDetailClick(artwork)}
                 />
             )
         })

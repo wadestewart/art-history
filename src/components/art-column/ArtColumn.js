@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { API } from '../../config'
 import ArtImage from '../art-image/ArtImage'
-// import Like from 
+// import Like from '../like/Like'
 
 class ArtColumn extends Component {
 
@@ -24,7 +24,7 @@ class ArtColumn extends Component {
         let imageUrls = this.state.imageUrls
 
         return (
-            <div className="art-column" onClick={this.props.onDetailsClick}>
+            <div className="art-column" onClick={this.props.onArtDetailClick}>
                 <ArtImage
                     imageUrl={imageUrls}
                 />
@@ -35,7 +35,7 @@ class ArtColumn extends Component {
                 </div>
 
                 {/* <Like
-
+                    onShowLikes={props.onShowLikes}
                 /> */}
             </div>
         )
