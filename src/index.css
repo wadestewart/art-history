@@ -39,7 +39,7 @@ figure {
   flex: 1 0 33.333333%;
   height: 100vh;
   overflow-y: scroll;
-  padding: 5em 0 0.2em 0;
+  padding: 4.7em 0 0.2em 0;
   position: relative;
 }
 
@@ -86,7 +86,7 @@ figure {
   display: flex;
   justify-content: center;
   /* left: 0; */
-  margin: 2rem 0 0 0;
+  margin: 1.9rem 0 0 0;
   position: fixed;
   top: 1.6em;
   width: 33%;
