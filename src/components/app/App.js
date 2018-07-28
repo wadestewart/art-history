@@ -10,6 +10,7 @@ class App extends Component {
 
     super()
 
+    this.handleShowLikes = this.handleShowLikes.bind(this)
     this.handleDetailsClick = this.handleDetailsClick.bind(this)
 
     this.state = {
@@ -18,6 +19,20 @@ class App extends Component {
       images: [],
       current:  {}
     }
+
+  }
+
+  handleShowLikes = (artwork) => {
+    const likes = this.state.likes.slice()
+    const artworkIndex = likes.indexOf(artwork)
+    if (artworkIndex > -1) {
+      console.log('I do not like ' + artwork.title + ' anymore')
+      likes.splice(artworkIndex, 1)
+    } else {
+      console.log('I like ' + artwork.title + '!')
+      likes.push(artwork)
+    }
+    this.setState({ likes })
 
   }
 
@@ -49,7 +64,7 @@ class App extends Component {
   }
       
   render() {
-    // console.log(this.state.images)
+    console.log(this.state.artworks)
 
     return (
       <div>
