@@ -7,7 +7,6 @@ import ArtDetail from '../art-detail/ArtDetail'
 class App extends Component {
 
   constructor() {
-
     super()
 
     this.handleShowLikes = this.handleShowLikes.bind(this)
@@ -64,7 +63,7 @@ class App extends Component {
   }
       
   render() {
-    console.log(this.state.artworks)
+    // console.log(this.state.artworks)
 
     return (
       <div>
