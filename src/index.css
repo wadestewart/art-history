@@ -39,7 +39,7 @@ figure {
   flex: 1 0 33.333333%;
   height: 100vh;
   overflow-y: scroll;
-  padding: 3.5em 0 0.2em 0;
+  padding: 5em 0 0.2em 0;
   position: relative;
 }
 
@@ -82,6 +82,35 @@ figure {
   margin-top: 0;
 }
 
+.art-list-show-states {
+  display: flex;
+  justify-content: center;
+  /* left: 0; */
+  margin: 2rem 0 0 0;
+  position: fixed;
+  top: 1.6em;
+  width: 33%;
+  z-index: 10;
+}
+
+.art-list-show-state {
+  background-color: #ccc;
+  color: white;
+  cursor: pointer;
+  flex-basis: 50%;
+  flex-grow: 1;
+  font-size: 0.75em;
+  letter-spacing: 0.3em;
+  margin: 0 0 0.1em;
+  padding: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.art-list-show-state:hover {
+  background-color: hsla(80, 76%, 50%, 0.8);
+}
+
 .art-detail {
   align-items: center;
   display: flex;
@@ -113,7 +142,7 @@ figure {
 }
 
 .detailed-info {
-  background-color: #77e057;
+  background-color: hsla(80, 76%, 50%, 0.8);
   color: white;
   line-height: 1.45;
   margin: 0.4rem;
