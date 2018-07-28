@@ -71,6 +71,7 @@ class App extends Component {
         <div className="art-library">
           <ArtList
             artworks={this.state.artworks}
+            likes={this.state.likes}
             onShowLikes={this.handleShowLikes}
             onDetailsClick={this.handleDetailsClick}
           />
