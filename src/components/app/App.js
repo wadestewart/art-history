@@ -14,6 +14,7 @@ class App extends Component {
 
     this.state = {
       artworks: [],
+      likes: [],
       images: [],
       current:  {}
     }
