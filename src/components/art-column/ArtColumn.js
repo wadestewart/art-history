@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { API } from '../../config'
 import ArtImage from '../art-image/ArtImage'
-// import Like from '../like/Like'
+import Like from '../like/Like'
 
 class ArtColumn extends Component {
 
@@ -34,9 +34,10 @@ class ArtColumn extends Component {
                     <p>{this.props.artwork.medium}</p>
                 </div>
 
-                {/* <Like
-                    onShowLikes={props.onShowLikes}
-                /> */}
+                <Like
+                    onShowLikes={this.props.onShowLikes}
+                    isLiked={this.props.isLiked}
+                />
             </div>
         )
     }    

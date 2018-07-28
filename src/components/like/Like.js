@@ -16,11 +16,11 @@ class Like extends Component {
 
     render() {
 
-        // const isLiked = (this.props.isLiked) ? ''
+        const isLiked = (this.props.isLiked) ? 'favorite' : 'favorite_border'
 
         return (
-            <div>
-
+            <div className={`art-column-like ${isLiked}`} onClick={this.handleClick}>
+                <p className="material-icons">{isLiked}</p>
             </div>
         )
     }
