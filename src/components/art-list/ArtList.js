@@ -14,7 +14,6 @@ class ArtList extends Component {
 
     }
 
-
     handleLikeClick = (show) => {
         console.log('Showing: ' + show)
         this.setState({ show: show })
@@ -45,7 +44,7 @@ class ArtList extends Component {
                         ALL
                     </div>
 
-                    <div  className={`art-list-show-state ${this.state.show === 'likes' ? 'is active' : ''}`} onClick={() => this.handleLikeClick('all')}>
+                    <div  className={`art-list-show-state ${this.state.show === 'likes' ? 'is active' : ''}`} onClick={() => this.handleLikeClick('likes')}>
                         LIKES
                     </div>
 
