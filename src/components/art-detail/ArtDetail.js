@@ -11,6 +11,7 @@ function ArtDetail(props) {
     }
     let largeImgUrl = bigPicData[0]
 
+    // if else statement to handle different props (does props.artwork === )
     return (
         <div className="art-details">
             <div className="art-detail">
