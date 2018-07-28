@@ -40,7 +40,7 @@ class App extends Component {
 
   componentDidMount = () => {
 
-    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=100`)
+    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=300`)
       .then(res => res.json())
       .then(data => this.setState({ artworks: data.objects }))
       .catch(err => console.log(err))
