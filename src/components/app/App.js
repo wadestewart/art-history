@@ -22,8 +22,10 @@ class App extends Component {
   }
 
   handleShowLikes = (artwork) => {
+
     const likes = this.state.likes.slice()
     const artworkIndex = likes.indexOf(artwork)
+
     if (artworkIndex > -1) {
       console.log('I do not like ' + artwork.title + ' anymore')
       likes.splice(artworkIndex, 1)

@@ -10,6 +10,7 @@ class ArtColumn extends Component {
     }
 
     componentDidMount = () => {
+
         let artwork = this.props.artwork
 
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
@@ -18,13 +19,16 @@ class ArtColumn extends Component {
                 let newImage = data.images[0].z.url
                 this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
             })
+
     }
 
     render() {
+
         let imageUrls = this.state.imageUrls
 
         return (
             <div className="art-column" onClick={this.props.onArtDetailClick}>
+
                 <ArtImage
                     imageUrl={imageUrls}
                 />
@@ -38,9 +42,12 @@ class ArtColumn extends Component {
                     onShowLikes={this.props.onShowLikes}
                     isLiked={this.props.isLiked}
                 />
+
             </div>
         )
-    }    
+
+    }
+    
 }
 
 export default ArtColumn

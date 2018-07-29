@@ -4,6 +4,7 @@ import ArtColumn from '../art-column/ArtColumn'
 class ArtList extends Component {
 
     constructor() {
+
         super()
 
         this.handleLikeClick = this.handleLikeClick.bind(this)
@@ -15,11 +16,14 @@ class ArtList extends Component {
     }
 
     handleLikeClick = (show) => {
+
         console.log('Showing: ' + show)
         this.setState({ show: show })
+
     }
     
     render() {
+        
         const artworks = (this.state.show === 'likes') ? this.props.likes : this.props.artworks
 
         const allArtworks = artworks.map((artwork) => {

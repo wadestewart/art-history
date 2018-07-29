@@ -10,7 +10,7 @@ class Like extends Component {
 
     handleClick = (e) => {
         e.stopPropagation()
-        console.log('User clicked liked!')
+        // console.log('User clicked liked!')
         this.props.onShowLikes()
     }
 

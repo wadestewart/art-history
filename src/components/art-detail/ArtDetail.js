@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ArtDetail(props) {
-    // console.log(props.images)
+    // console.log(props.artwork.label_text)
     let bigPics = props.images.b
     let bigPicData = []
     
@@ -10,8 +10,19 @@ function ArtDetail(props) {
         bigPicData.push(bigPics[key])
     }
     let largeImgUrl = bigPicData[0]
-
+    
     // if else statement to handle different props (does props.artwork === )
+    
+    // let detail
+    // 
+    // 
+    
+    // if (props.artwork.label_text !== null) {
+    //      console.log('We have label_text!')
+    // } else {
+    //     console.log("We ain't got no label_text here.")
+    // }
+
     return (
         <div className="art-details">
             <div className="art-detail">
