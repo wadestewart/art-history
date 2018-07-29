@@ -46,7 +46,7 @@ class Flashcard extends Component {
     }
 
     render() {
-
+        console.log(this.props.card)
         console.log(this.state.timer)
 
         return (

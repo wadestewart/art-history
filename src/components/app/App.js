@@ -79,7 +79,7 @@ class App extends Component {
       
   render() {
     let flashcard = this.state.flashcards[this.state.currentIndex]
-    console.log(flashcard)
+    // console.log(flashcard)
 
     return (
       <div>

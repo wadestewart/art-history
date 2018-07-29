@@ -2,7 +2,7 @@ import React from 'react'
 import Flashcard from '../flashcard/Flashcard'
 
 function ArtDetail(props) {
-    // console.log(props.artwork)
+    // console.log(props.card)
     let bigPics = props.images.b
     let bigPicData = []
     
@@ -49,7 +49,7 @@ function ArtDetail(props) {
     return (
         <div className="art-details">
             <Flashcard
-
+                card={props.card}
             />
             {detail}
         </div>
