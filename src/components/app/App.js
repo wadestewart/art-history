@@ -16,7 +16,10 @@ class App extends Component {
       artworks: [],
       likes: [],
       images: [],
-      current:  {}
+      current:  {},
+      flashcards: [],
+      currentIndex: 0,
+      timer: 10
     }
 
   }
@@ -50,6 +53,18 @@ class App extends Component {
 
   }
 
+  next = () => {
+
+    let nextIndex = 
+      this.state.currentIndex +1 !== this.state.flashcards.length
+      ? this.state.currentIndex +1
+      : this.state.currentIndex
+
+    this.setState({
+      currentIndex: nextIndex
+    })
+  }
+
   componentDidMount = () => {
 
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=6`)
@@ -60,6 +75,7 @@ class App extends Component {
   }
       
   render() {
+    let flashcard = this.state.flashcards[this.state.currentIndex]
 
     return (
       <div>
@@ -73,6 +89,7 @@ class App extends Component {
           />
           <ArtDetail
             artwork={this.state.current}
+            card={flashcard}
             images={this.state.images}
           />
         </div>
