@@ -3,7 +3,7 @@ import { API } from '../../config'
 import ArtImage from '../art-image/ArtImage'
 import Like from '../like/Like'
 
-class ArtColumn extends Component {
+class ArtCard extends Component {
 
     state = {
         imageUrls: []
@@ -19,6 +19,7 @@ class ArtColumn extends Component {
                 let newImage = data.images[0].z.url
                 this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
             })
+            .catch(err => console.log(err))
 
     }
 
@@ -50,4 +51,4 @@ class ArtColumn extends Component {
     
 }
 
-export default ArtColumn
+export default ArtCard

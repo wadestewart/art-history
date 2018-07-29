@@ -1,18 +1,16 @@
 import React from 'react'
-import Flashcard from '../flashcard/Flashcard'
+// import Flashcard from '../flashcard/Flashcard'
 
 function ArtDetail(props) {
-    // console.log(props.card)
     let bigPics = props.images.b
     let bigPicData = []
     
     for (let key in bigPics) {
-        // console.log(key, bigPics[key])
         bigPicData.push(bigPics[key])
     }
     
     let largeImgUrl = bigPicData[0]
-        
+
     let detail
 
     if (props.artwork.id && props.artwork.label_text !== null) {
@@ -48,9 +46,9 @@ function ArtDetail(props) {
 
     return (
         <div className="art-details">
-            <Flashcard
-                card={props.card}
-            />
+            {/* <Flashcard
+                flashcard={props.flashcard}
+            /> */}
             {detail}
         </div>
     )

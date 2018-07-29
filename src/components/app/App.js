@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import Header from '../header/Header'
 import { API } from '../../config'
+
+import Header from '../header/Header'
 import ArtList from '../art-list/ArtList'
 import ArtDetail from '../art-detail/ArtDetail'
+import Flashcard from '../flashcard/Flashcard'
 
 class App extends Component {
 
@@ -63,6 +65,7 @@ class App extends Component {
     this.setState({
       currentIndex: nextIndex
     })
+    
   }
 
   componentDidMount = () => {
@@ -79,7 +82,27 @@ class App extends Component {
       
   render() {
     let flashcard = this.state.flashcards[this.state.currentIndex]
-    // console.log(flashcard)
+    // let artCarousel =
+    //   (this.state.current !== {})
+    //   ? <Flashcard
+    //       flashcard={flashcard}
+    //     />
+    //   : <ArtDetail 
+    //       artwork={this.state.current}
+    //       images={this.state.images}
+    //       onTimerEnd={this.next}
+    //     />
+        
+    console.log(flashcard)
+
+    if (flashcard !== undefined) {
+      var flashcardComponent =
+        <Flashcard
+          flashcard={flashcard}
+        />
+    } else {
+      var flashcardComponent = null
+    }
 
     return (
       <div>
@@ -90,20 +113,22 @@ class App extends Component {
             likes={this.state.likes}
             onShowLikes={this.handleShowLikes}
             onArtDetailClick={this.handleArtDetailClick}
-          />
-          <ArtDetail
-            artwork={this.state.current}
-            card={flashcard}
-            images={this.state.images}
-            onTimerEnd={this.next}
-          />
+            />
+          {/* {artCarousel} */}
+          {flashcardComponent}
         </div>
       </div>
     )
-
+    
   }
-
+  
 }
 
 export default App
+
+// if (this.state.current !== {}) {
+//   console.log('Truthy')
+// } else {
+//   console.log('Falsy')
+// }
 
