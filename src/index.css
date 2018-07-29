@@ -48,7 +48,7 @@ figure {
   flex: 0 1 66.666666%;
   height: 100vh;
   overflow-y: scroll;
-  padding: 3.5em 0 0.2em 0;
+  padding: 3em 0 0.2em 0;
   position: relative;
 }
 
