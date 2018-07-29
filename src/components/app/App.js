@@ -69,13 +69,17 @@ class App extends Component {
 
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=6`)
       .then(res => res.json())
-      .then(data => this.setState({ artworks: data.objects }))
+      .then(data => {
+        this.setState({ artworks: data.objects })
+        this.setState({ flashcards: data.objects })
+      })
       .catch(err => console.log(err))
      
   }
       
   render() {
     let flashcard = this.state.flashcards[this.state.currentIndex]
+    console.log(flashcard)
 
     return (
       <div>

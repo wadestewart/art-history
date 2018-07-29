@@ -1,7 +1,8 @@
 import React from 'react'
+import Flashcard from '../flashcard/Flashcard'
 
 function ArtDetail(props) {
-    console.log(props.artwork)
+    // console.log(props.artwork)
     let bigPics = props.images.b
     let bigPicData = []
     
@@ -15,7 +16,7 @@ function ArtDetail(props) {
     let detail
 
     if (props.artwork.id && props.artwork.label_text !== null) {
-        console.log('Both statements true!')
+        // console.log('Both statements true!')
         detail = (
             <div className="art-detail">
                 <figure className="large-image">
@@ -30,7 +31,7 @@ function ArtDetail(props) {
             </div>
         )
     } else {
-        console.log('Which statement is false? Probably the label_text.')
+        // console.log('Which statement is false? Probably the label_text.')
         detail = (
             <div className="art-detail">
                 <figure className="large-image">
@@ -47,10 +48,13 @@ function ArtDetail(props) {
 
     return (
         <div className="art-details">
+            <Flashcard
+
+            />
             {detail}
         </div>
     )
-    
+
 }
 
 export default ArtDetail

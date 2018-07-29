@@ -47,8 +47,8 @@ class Flashcard extends Component {
 
     render() {
 
-        console.log(timer)
-        
+        console.log(this.state.timer)
+
         return (
             <div>
 
