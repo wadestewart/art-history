@@ -93,7 +93,8 @@ class App extends Component {
     //       onTimerEnd={this.next}
     //     />
         
-    console.log(flashcard)
+    // console.log(flashcard)
+    var flashcardComponent
 
     if (flashcard !== undefined) {
       var flashcardComponent =
