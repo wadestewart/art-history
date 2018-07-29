@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ArtDetail(props) {
-    // console.log(props.artwork.label_text)
+    console.log(props.artwork)
     let bigPics = props.images.b
     let bigPicData = []
     
@@ -13,9 +13,7 @@ function ArtDetail(props) {
     
     // if else statement to handle different props (does props.artwork === )
     
-    // let detail
-    // 
-    // 
+    let detail
     
     // if (props.artwork.label_text !== null) {
     //      console.log('We have label_text!')
@@ -23,8 +21,9 @@ function ArtDetail(props) {
     //     console.log("We ain't got no label_text here.")
     // }
 
-    return (
-        <div className="art-details">
+    if (props.artwork.id && props.artwork.label_text !== null) {
+        console.log('Both statements true!')
+        detail = (
             <div className="art-detail">
                 <figure className="large-image">
                     <img src={largeImgUrl} alt="" />
@@ -32,9 +31,30 @@ function ArtDetail(props) {
                 </figure>
                 <div className="detailed-info">
                     <h2 className="art-description">{props.artwork.description}</h2>
-                    <h5 className="art-credit">{props.artwork.creditline}</h5>
+                    <p className="label-text">{props.artwork.label_text}</p>
+                    <h4 className="art-credit">{props.artwork.creditline}</h4>
                 </div>
             </div>
+        )
+    } else {
+        console.log('Which statement is false? Probably the label_text.')
+        detail = (
+            <div className="art-detail">
+                <figure className="large-image">
+                    <img src={largeImgUrl} alt="" />
+                    <h1 className="piece-title">{props.artwork.title}</h1>
+                </figure>
+                <div className="detailed-info">
+                    <h2 className="art-description">{props.artwork.description}</h2>
+                    <h4 className="art-credit">{props.artwork.creditline}</h4>
+                </div>
+            </div>
+        )
+    }
+
+    return (
+        <div className="art-details">
+            {detail}
         </div>
     )
 }
