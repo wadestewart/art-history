@@ -91,6 +91,7 @@ class App extends Component {
             artwork={this.state.current}
             card={flashcard}
             images={this.state.images}
+            onTimerEnd={this.next}
           />
         </div>
       </div>
