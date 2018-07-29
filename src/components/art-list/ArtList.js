@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ArtColumn from '../art-column/ArtColumn'
+import ArtCard from '../art-card/ArtCard'
 
 class ArtList extends Component {
 
@@ -28,7 +28,7 @@ class ArtList extends Component {
 
         const allArtworks = artworks.map((artwork) => {
             return (
-                <ArtColumn
+                <ArtCard
                     artwork={artwork}
                     key={artwork.id}
                     title={artwork.title}
