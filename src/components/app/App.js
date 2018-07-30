@@ -3,7 +3,7 @@ import { API } from '../../config'
 
 import Header from '../header/Header'
 import ArtList from '../art-list/ArtList'
-import ArtDetail from '../art-detail/ArtDetail'
+// import ArtDetail from '../art-detail/ArtDetail'
 import Flashcard from '../flashcard/Flashcard'
 
 class App extends Component {
@@ -100,6 +100,7 @@ class App extends Component {
       var flashcardComponent =
         <Flashcard
           flashcard={flashcard}
+          onTimerEnd={this.next}
         />
     } else {
       var flashcardComponent = null
