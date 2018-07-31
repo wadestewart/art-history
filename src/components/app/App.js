@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { API } from '../../config'
 
+
 import Header from '../header/Header'
 import ArtListContainer from '../art-list/ArtListContainer'
-// import ArtDetail from '../art-detail/ArtDetail'
+// import ArtDetailContainer from '../art-detail/ArtDetailContainer'
+import ArtDetail from '../art-detail/ArtDetail'
 import Flashcard from '../flashcard/Flashcard'
 
 class App extends Component {
@@ -12,8 +14,7 @@ class App extends Component {
     super()
 
     this.state = {
-      // artworks: [],
-      // likes: [],
+      artworks: [],
       images: [],
       current:  {},
       flashcards: [],
@@ -46,7 +47,7 @@ class App extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({ artworks: data.objects })
-        this.setState({ flashcards: data.objects })
+        // this.setState({ flashcards: data.objects })
       })
       .catch(err => console.log(err))
      
@@ -59,32 +60,39 @@ class App extends Component {
     //   ? <Flashcard
     //       flashcard={flashcard}
     //     />
-    //   : <ArtDetail 
-    //       artwork={this.state.current}
-    //       images={this.state.images}
+      // : <ArtDetail 
+      //     artwork={this.state.current}
+      //     images={this.state.images}
+      //     onTimerEnd={this.next}
+      //   />
+        
+    // console.log(flashcard)
+    // var flashcardComponent
+
+    // if (flashcard !== undefined) {
+    //   var flashcardComponent =
+    //     <Flashcard
+    //       flashcard={flashcard}
     //       onTimerEnd={this.next}
     //     />
-        
-    console.log(flashcard)
-    var flashcardComponent
-
-    if (flashcard !== undefined) {
-      var flashcardComponent =
-        <Flashcard
-          flashcard={flashcard}
-          onTimerEnd={this.next}
-        />
-    } else {
-      var flashcardComponent = null
-    }
+    // } else {
+    //   var flashcardComponent = null
+    // }
 
     return (
       <div>
         <Header />
         <div className="art-library">
-          <ArtListContainer />
+          <ArtListContainer
+
+          />
+          <ArtDetail 
+            artwork={this.state.current}
+            images={this.state.images}
+            onTimerEnd={this.next}
+          />
           {/* {artCarousel} */}
-          {flashcardComponent}
+          {/* {flashcardComponent} */}
         </div>
       </div>
     )

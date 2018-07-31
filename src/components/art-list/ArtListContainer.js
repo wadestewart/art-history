@@ -8,7 +8,6 @@ class ArtListContainer extends Component {
         super()
 
         this.handleShowLikes = this.handleShowLikes.bind(this)
-        this.handleDetailsClick = this.handleArtDetailClick.bind(this)
 
         this.state = {
             artworks: [],
@@ -32,18 +31,18 @@ class ArtListContainer extends Component {
     
       }
 
-    handleArtDetailClick = (artwork) => {
+    // handleArtDetailClick = (artwork) => {
 
-        console.log('Fetching data for ' + artwork.title)
-        fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
-          .then(res => res.json())
-          .then(data => {
-            this.setState({ current: data.object })
-            this.setState({ images: this.state.current.images[0] })
-          })
-          .catch(err => console.log(err))
+    //     console.log('Fetching data for ' + artwork.title)
+    //     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
+    //       .then(res => res.json())
+    //       .then(data => {
+    //         this.setState({ current: data.object })
+    //         this.setState({ images: this.state.current.images[0] })
+    //       })
+    //       .catch(err => console.log(err))
     
-    }
+    // }
 
     componentDidMount = () => {
 
@@ -51,7 +50,6 @@ class ArtListContainer extends Component {
         .then(res => res.json())
         .then(data => {
             this.setState({ artworks: data.objects })
-            // this.setState({ flashcards: data.objects })
         })
         .catch(err => console.log(err))
         
@@ -62,14 +60,12 @@ class ArtListContainer extends Component {
         // console.log(artworks)
 
         return (
-            <div className="container">
-                <ArtList
-                    artworks={this.state.artworks}
-                    likes={this.state.likes}
-                    onShowLikes={this.handleShowLikes}
-                    onArtDetailClick={this.handleArtDetailClick}
-                />
-            </div>
+            <ArtList
+                artworks={this.state.artworks}
+                likes={this.state.likes}
+                onShowLikes={this.handleShowLikes}
+                onArtDetailClick={this.handleArtDetailClick}
+            />
         )
     }
 }
