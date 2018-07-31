@@ -16,8 +16,6 @@ class Flashcard extends Component {
     }
 
     decrementTimer = () => {
-        // console.log('One less second')
-        // window.setInterval(this.decrementTimer, 1000)
 
         if (this.state.timer === 0) {
             this.props.onTimerEnd()
@@ -33,13 +31,15 @@ class Flashcard extends Component {
 
     componentDidMount = () => {
         
-        const artwork = this.props.flashcard.id
+        const artwork = this.props.flashcard
+        console.log(artwork)
         
         this.setState({
-            currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+            currentTimeout: window.setTimeout(this.decrementTimer, 1000),
+            // flashcard: this.props.flashcard
         })
         
-        fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork}`)
+        fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data.object.images[0].z.url)
@@ -53,16 +53,19 @@ class Flashcard extends Component {
 
     componentWillReceiveProps = () => {
 
+        const artwork = this.props.flashcard
+        console.log(artwork)
+
         clearTimeout(this.state.currentTimeout)
         this.setState({
             timer: 10,
-            currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+            currentTimeout: window.setTimeout(this.decrementTimer, 1000),
         })
 
     }
 
     render() {
-        // console.log(this.state.artwork)
+        console.log(this.state.artwork)
         console.log(this.state.timer)
 
         let imgUrl = this.state.imageUrl

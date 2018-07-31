@@ -63,9 +63,13 @@ class App extends Component {
       : this.state.currentIndex
 
     this.setState({
-      currentIndex: nextIndex
+      currentIndex: nextIndex,
     })
     
+  }
+
+  handleFlashcardImage = (artwork) => {
+
   }
 
   componentDidMount = () => {
@@ -93,7 +97,7 @@ class App extends Component {
     //       onTimerEnd={this.next}
     //     />
         
-    // console.log(flashcard)
+    console.log(flashcard)
     var flashcardComponent
 
     if (flashcard !== undefined) {
