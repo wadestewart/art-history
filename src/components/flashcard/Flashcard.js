@@ -5,7 +5,7 @@ class Flashcard extends Component {
     constructor(props) {
         super(props)
 
-        this.decrementTimer = this.decrementTimer.bind(this)
+        // this.decrementTimer = this.decrementTimer.bind(this)
 
         this.state = {
             currentTimeout: null,
@@ -15,19 +15,19 @@ class Flashcard extends Component {
         }
     }
 
-    decrementTimer = () => {
+    // decrementTimer = () => {
 
-        if (this.state.timer === 0) {
-            this.props.onTimerEnd()
-        } else {
-            clearTimeout(this.state.currentTimeout)
-            this.setState(prevState => ({
-                timer: prevState.timer -1,
-                currentTimeout: window.setTimeout(this.decrementTimer, 1000)
-            }))
-        }
+    //     if (this.state.timer === 0) {
+    //         this.props.onTimerEnd()
+    //     } else {
+    //         clearTimeout(this.state.currentTimeout)
+    //         this.setState(prevState => ({
+    //             timer: prevState.timer -1,
+    //             currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+    //         }))
+    //     }
 
-    }
+    // }
 
     componentDidMount = () => {
         

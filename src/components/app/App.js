@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { API } from '../../config'
 
 import Header from '../header/Header'
-import ArtList from '../art-list/ArtList'
+import ArtListContainer from '../art-list/ArtListContainer'
 // import ArtDetail from '../art-detail/ArtDetail'
 import Flashcard from '../flashcard/Flashcard'
 
@@ -11,47 +11,15 @@ class App extends Component {
   constructor() {
     super()
 
-    this.handleShowLikes = this.handleShowLikes.bind(this)
-    this.handleDetailsClick = this.handleArtDetailClick.bind(this)
-
     this.state = {
-      artworks: [],
-      likes: [],
+      // artworks: [],
+      // likes: [],
       images: [],
       current:  {},
       flashcards: [],
       currentIndex: 0,
       timer: 10
     }
-
-  }
-
-  handleShowLikes = (artwork) => {
-
-    const likes = this.state.likes.slice()
-    const artworkIndex = likes.indexOf(artwork)
-
-    if (artworkIndex > -1) {
-      console.log('I do not like ' + artwork.title + ' anymore')
-      likes.splice(artworkIndex, 1)
-    } else {
-      console.log('I like ' + artwork.title + '!')
-      likes.push(artwork)
-    }
-    this.setState({ likes })
-
-  }
-
-  handleArtDetailClick = (artwork) => {
-
-    console.log('Fetching data for ' + artwork.title)
-    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ current: data.object })
-        this.setState({ images: this.state.current.images[0] })
-      })
-      .catch(err => console.log(err))
 
   }
 
@@ -114,12 +82,7 @@ class App extends Component {
       <div>
         <Header />
         <div className="art-library">
-          <ArtList
-            artworks={this.state.artworks}
-            likes={this.state.likes}
-            onShowLikes={this.handleShowLikes}
-            onArtDetailClick={this.handleArtDetailClick}
-            />
+          <ArtListContainer />
           {/* {artCarousel} */}
           {flashcardComponent}
         </div>
