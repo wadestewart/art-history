@@ -22,6 +22,7 @@ class ArtList extends Component {
     }
     
     render() {
+        console.log(this.props)
         
         const artworks = (this.state.show === 'likes') ? this.props.likes : this.props.artworks
 

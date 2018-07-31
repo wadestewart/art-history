@@ -1,26 +1,59 @@
 import React, { Component } from 'react'
 import { API } from '../../config'
 
-
 import Header from '../header/Header'
-import ArtListContainer from '../art-list/ArtListContainer'
+import ArtList from '../art-list/ArtList'
 // import ArtDetailContainer from '../art-detail/ArtDetailContainer'
 import ArtDetail from '../art-detail/ArtDetail'
-import Flashcard from '../flashcard/Flashcard'
+// import Flashcard from '../flashcard/Flashcard'
 
 class App extends Component {
 
   constructor() {
     super()
 
+    this.handleArtDetailClick = this.handleArtDetailClick.bind(this)
+    this.handleShowLikes = this.handleShowLikes.bind(this)
+
+
     this.state = {
       artworks: [],
       images: [],
       current:  {},
+      likes: [],
       flashcards: [],
       currentIndex: 0,
       timer: 10
     }
+
+  }
+
+  handleShowLikes = (artwork) => {
+
+    const likes = this.state.likes.slice()
+    const artworkIndex = likes.indexOf(artwork)
+
+    if (artworkIndex > -1) {
+      console.log('I do not like ' + artwork.title + ' anymore')
+      likes.splice(artworkIndex, 1)
+    } else {
+      console.log('I like ' + artwork.title + '!')
+      likes.push(artwork)
+    }
+    this.setState({ likes })
+
+  }
+
+  handleArtDetailClick = (artwork) => {
+
+    console.log('Fetching data for ' + artwork.title)
+    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ current: data.object })
+        this.setState({ images: this.state.current.images[0] })
+      })
+      .catch(err => console.log(err))
 
   }
 
@@ -37,9 +70,9 @@ class App extends Component {
     
   }
 
-  handleFlashcardImage = (artwork) => {
+  // handleFlashcardImage = (artwork) => {
 
-  }
+  // }
 
   componentDidMount = () => {
 
@@ -54,7 +87,7 @@ class App extends Component {
   }
       
   render() {
-    let flashcard = this.state.flashcards[this.state.currentIndex]
+    // let flashcard = this.state.flashcards[this.state.currentIndex]
     // let artCarousel =
     //   (this.state.current !== {})
     //   ? <Flashcard
@@ -83,8 +116,11 @@ class App extends Component {
       <div>
         <Header />
         <div className="art-library">
-          <ArtListContainer
-
+          <ArtList
+            artworks={this.state.artworks}
+            likes={this.state.likes}
+            onShowLikes={this.handleShowLikes}
+            onArtDetailClick={this.handleArtDetailClick}
           />
           <ArtDetail 
             artwork={this.state.current}
