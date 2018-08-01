@@ -36,14 +36,12 @@ class Flashcard extends Component {
         console.log(artwork)
         
         this.setState({
-            currentTimeout: window.setTimeout(this.decrementTimer, 1000),
-            // flashcard: this.props.flashcard
+            currentTimeout: window.setTimeout(this.decrementTimer, 1000)
         })
         
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
         .then(res => res.json())
         .then(data => {
-            // console.log(data.object.images[0].z.url)
             let newImage = data.object.images[0].z.url
             console.log(newImage)
             this.setState({ artwork: data.object })
@@ -53,23 +51,30 @@ class Flashcard extends Component {
     }
 
     
-    componentDidMount = () => {  
+    componentDidMount = () => {
+        this.setState({
+            currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+        })
         this.fetchData()
     }
 
     componentDidUpdate = (prevProps) => {
         if (prevProps.flashcard.id !== this.props.flashcard.id) {
+            clearTimeout(this.state.currentTimeout)
+            this.setState({
+                timer: 10,
+                currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+            })
             this.fetchData()
         }
     }
 
 
     render() {
-        console.log(this.state.artwork)
         console.log(this.state.timer)
+        console.log(this.state.currentTimeout)
 
         let imgUrl = this.state.imageUrl
-        console.log(this.state.imageUrl)
         let artwork = this.state.artwork
         let detail
 
