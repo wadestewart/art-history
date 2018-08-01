@@ -45,8 +45,9 @@ class Flashcard extends Component {
         .then(data => {
             // console.log(data.object.images[0].z.url)
             let newImage = data.object.images[0].z.url
+            console.log(newImage)
             this.setState({ artwork: data.object })
-            this.setState({ imageUrl: this.state.imageUrl.concat(newImage) })
+            this.setState({ imageUrl: newImage })
         })
         .catch(err => console.log(err))
     }
@@ -68,6 +69,7 @@ class Flashcard extends Component {
         console.log(this.state.timer)
 
         let imgUrl = this.state.imageUrl
+        console.log(this.state.imageUrl)
         let artwork = this.state.artwork
         let detail
 
