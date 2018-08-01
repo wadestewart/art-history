@@ -5,32 +5,33 @@ class Flashcard extends Component {
     constructor(props) {
         super(props)
 
-        // this.decrementTimer = this.decrementTimer.bind(this)
+        this.decrementTimer = this.decrementTimer.bind(this)
+        this.fetchData = this.fetchData.bind(this)
 
         this.state = {
             currentTimeout: null,
             timer: 10,
             imageUrl: '',
-            artwork: []
+            artwork: [],
         }
     }
 
-    // decrementTimer = () => {
+    decrementTimer = () => {
 
-    //     if (this.state.timer === 0) {
-    //         this.props.onTimerEnd()
-    //     } else {
-    //         clearTimeout(this.state.currentTimeout)
-    //         this.setState(prevState => ({
-    //             timer: prevState.timer -1,
-    //             currentTimeout: window.setTimeout(this.decrementTimer, 1000)
-    //         }))
-    //     }
+        if (this.state.timer === 0) {
+            this.props.onTimerEnd()
+        } else {
+            clearTimeout(this.state.currentTimeout)
+            this.setState(prevState => ({
+                timer: prevState.timer -1,
+                currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+            }))
+        }
 
-    // }
+    }
 
-    componentDidMount = () => {
-        
+    fetchData = () => {
+
         const artwork = this.props.flashcard
         console.log(artwork)
         
@@ -40,29 +41,27 @@ class Flashcard extends Component {
         })
         
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data.object.images[0].z.url)
-                let newImage = data.object.images[0].z.url
-                this.setState({ artwork: data.object })
-                this.setState({ imageUrl: this.state.imageUrl.concat(newImage) })
-            })
-            .catch(err => console.log(err))
-
-    }
-
-    componentWillReceiveProps = () => {
-
-        const artwork = this.props.flashcard
-        console.log(artwork)
-
-        clearTimeout(this.state.currentTimeout)
-        this.setState({
-            timer: 10,
-            currentTimeout: window.setTimeout(this.decrementTimer, 1000),
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data.object.images[0].z.url)
+            let newImage = data.object.images[0].z.url
+            this.setState({ artwork: data.object })
+            this.setState({ imageUrl: this.state.imageUrl.concat(newImage) })
         })
-
+        .catch(err => console.log(err))
     }
+
+    
+    componentDidMount = () => {  
+        this.fetchData()
+    }
+
+    componentDidUpdate = (prevProps) => {
+        if (prevProps.flashcard.id !== this.props.flashcard.id) {
+            this.fetchData()
+        }
+    }
+
 
     render() {
         console.log(this.state.artwork)
