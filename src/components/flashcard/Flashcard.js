@@ -33,7 +33,6 @@ class Flashcard extends Component {
     fetchData = () => {
 
         const artwork = this.props.flashcard
-        console.log(artwork)
         
         this.setState({
             currentTimeout: window.setTimeout(this.decrementTimer, 1000)
@@ -43,7 +42,6 @@ class Flashcard extends Component {
         .then(res => res.json())
         .then(data => {
             let newImage = data.object.images[0].z.url
-            console.log(newImage)
             this.setState({ artwork: data.object })
             this.setState({ imageUrl: newImage })
         })
@@ -71,8 +69,6 @@ class Flashcard extends Component {
 
 
     render() {
-        console.log(this.state.timer)
-        console.log(this.state.currentTimeout)
 
         let imgUrl = this.state.imageUrl
         let artwork = this.state.artwork

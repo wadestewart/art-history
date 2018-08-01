@@ -96,7 +96,6 @@ class App extends Component {
       //     images={this.state.images}
       //   />
         
-    console.log(flashcard)
     var flashcardComponent
 
     if (flashcard !== undefined) {
