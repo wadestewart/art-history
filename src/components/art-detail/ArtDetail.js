@@ -1,5 +1,4 @@
 import React from 'react'
-// import Flashcard from '../flashcard/Flashcard'
 
 function ArtDetail(props) {
     let bigPics = props.images.b
@@ -10,7 +9,6 @@ function ArtDetail(props) {
     }
     
     let largeImgUrl = bigPicData[0]
-
     let detail
 
     if (props.artwork.id && props.artwork.label_text !== null) {

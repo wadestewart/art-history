@@ -10,7 +10,6 @@ class ArtCard extends Component {
     }
 
     componentDidMount = () => {
-
         let artwork = this.props.artwork
 
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
@@ -20,11 +19,9 @@ class ArtCard extends Component {
                 this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
             })
             .catch(err => console.log(err))
-
     }
 
     render() {
-
         let imageUrls = this.state.imageUrls
 
         return (
@@ -46,9 +43,7 @@ class ArtCard extends Component {
 
             </div>
         )
-
     }
-    
 }
 
 export default ArtCard

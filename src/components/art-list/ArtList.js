@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import ArtCard from '../art-card/ArtCard'
 
 class ArtList extends Component {
-
     constructor() {
         super()
 
@@ -11,18 +10,14 @@ class ArtList extends Component {
         this.state = {
             show: 'all'
         }
-
     }
 
     handleLikeClick = (show) => {
-
         console.log('Showing: ' + show)
         this.setState({ show: show })
-
     }
     
     render() {
-        
         const artworks = (this.state.show === 'likes') ? this.props.likes : this.props.artworks
 
         const allArtworks = artworks.map((artwork) => {

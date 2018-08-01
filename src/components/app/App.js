@@ -7,7 +7,6 @@ import ArtDetail from '../art-detail/ArtDetail'
 import Flashcard from '../flashcard/Flashcard'
 
 class App extends Component {
-
   constructor() {
     super()
 
@@ -20,13 +19,12 @@ class App extends Component {
       current:  {},
       likes: [],
       currentIndex: 0,
-      timer: 10,
+      timer: 2,
       show: false
     }
   }
 
   handleShowLikes = (artwork) => {
-
     const likes = this.state.likes.slice()
     const artworkIndex = likes.indexOf(artwork)
 
@@ -41,7 +39,6 @@ class App extends Component {
   }
 
   handleArtDetailClick = (artwork) => {
-
     console.log('Fetching data for ' + artwork.title)
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
       .then(res => res.json())
@@ -54,7 +51,6 @@ class App extends Component {
   }
 
   next = () => {
-
     let nextIndex = 
       this.state.currentIndex +1 !== this.state.artworks.length
       ? this.state.currentIndex +1
@@ -66,20 +62,13 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-
-    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=6`)
+    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getOnDisplay&access_token=${API.apiKey}&per_page=75`)
       .then(res => res.json())
       .then(data => {
         this.setState({ artworks: data.objects })
       })
       .catch(err => console.log(err))
   }
-
-  // componentDidUpdate = () => {
-  //   if (this.state.current !== prevState.current) {
-  //     this.setState({ current: this.state.current})
-  //   }
-  // }
       
   render() {
     console.log(this.state.show)

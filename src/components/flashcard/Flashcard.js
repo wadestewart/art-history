@@ -10,14 +10,13 @@ class Flashcard extends Component {
 
         this.state = {
             currentTimeout: null,
-            timer: 10,
+            timer: 1,
             imageUrl: '',
             artwork: []
         }
     }
 
     decrementTimer = () => {
-
         if (this.state.timer === 0) {
             this.props.onTimerEnd()
         } else {
@@ -30,7 +29,6 @@ class Flashcard extends Component {
     }
 
     fetchData = () => {
-
         const artwork = this.props.flashcard
         
         this.setState({
@@ -59,7 +57,7 @@ class Flashcard extends Component {
         if (prevProps.flashcard.id !== this.props.flashcard.id) {
             clearTimeout(this.state.currentTimeout)
             this.setState({
-                timer: 10,
+                timer: 1,
                 currentTimeout: window.setTimeout(this.decrementTimer, 1000)
             })
             this.fetchData()
@@ -68,7 +66,6 @@ class Flashcard extends Component {
 
 
     render() {
-
         let imgUrl = this.state.imageUrl
         let artwork = this.state.artwork
         let detail
@@ -109,7 +106,6 @@ class Flashcard extends Component {
                 {detail}
             </div>
         )
-
     }
 }
 
