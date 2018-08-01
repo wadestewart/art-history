@@ -12,7 +12,7 @@ class Flashcard extends Component {
             currentTimeout: null,
             timer: 10,
             imageUrl: '',
-            artwork: [],
+            artwork: []
         }
     }
 
@@ -27,7 +27,6 @@ class Flashcard extends Component {
                 currentTimeout: window.setTimeout(this.decrementTimer, 1000)
             }))
         }
-
     }
 
     fetchData = () => {

@@ -3,7 +3,7 @@ import { API } from '../../config'
 
 import Header from '../header/Header'
 import ArtList from '../art-list/ArtList'
-// import ArtDetail from '../art-detail/ArtDetail'
+import ArtDetail from '../art-detail/ArtDetail'
 import Flashcard from '../flashcard/Flashcard'
 
 class App extends Component {
@@ -11,20 +11,18 @@ class App extends Component {
   constructor() {
     super()
 
-    this.handleArtDetailClick = this.handleArtDetailClick.bind(this)
     this.handleShowLikes = this.handleShowLikes.bind(this)
-
+    this.handleArtDetailClick = this.handleArtDetailClick.bind(this)
 
     this.state = {
       artworks: [],
       images: [],
       current:  {},
       likes: [],
-      flashcards: [],
       currentIndex: 0,
-      timer: 10
+      timer: 10,
+      show: false
     }
-
   }
 
   handleShowLikes = (artwork) => {
@@ -40,7 +38,6 @@ class App extends Component {
       likes.push(artwork)
     }
     this.setState({ likes })
-
   }
 
   handleArtDetailClick = (artwork) => {
@@ -49,24 +46,23 @@ class App extends Component {
     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
       .then(res => res.json())
       .then(data => {
+        this.setState(prevState => ({ show: !prevState.show }))
         this.setState({ current: data.object })
         this.setState({ images: this.state.current.images[0] })
       })
       .catch(err => console.log(err))
-
   }
 
   next = () => {
 
     let nextIndex = 
-      this.state.currentIndex +1 !== this.state.flashcards.length
+      this.state.currentIndex +1 !== this.state.artworks.length
       ? this.state.currentIndex +1
       : this.state.currentIndex
 
     this.setState({
       currentIndex: nextIndex,
     })
-    
   }
 
   componentDidMount = () => {
@@ -75,37 +71,32 @@ class App extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({ artworks: data.objects })
-        this.setState({ flashcards: data.objects })
       })
       .catch(err => console.log(err))
-     
   }
+
+  // componentDidUpdate = () => {
+  //   if (this.state.current !== prevState.current) {
+  //     this.setState({ current: this.state.current})
+  //   }
+  // }
       
   render() {
-    let flashcard = this.state.flashcards[this.state.currentIndex]
-    // let artCarousel =
-    //   (this.state.current !== true)
-    //   ? <Flashcard
-    //       flashcard={flashcard}
-    //       onTimerEnd={this.next}
+    console.log(this.state.show)
+    let flashcard = this.state.artworks[this.state.currentIndex]   
 
-    //     />
-      // : <ArtDetail 
-      //     artwork={this.state.current}
-      //     images={this.state.images}
-      //   />
-        
-    var flashcardComponent
-
-    if (flashcard !== undefined) {
-      var flashcardComponent =
-        <Flashcard
-          flashcard={flashcard}
-          onTimerEnd={this.next}
+    let artCarousel = 
+      (this.state.current !== true && this.state.show !== true)
+      ? (flashcard !== undefined)
+        ? <Flashcard
+            flashcard={flashcard}
+            onTimerEnd={this.next}
+          />
+        : null 
+      : <ArtDetail
+          artwork={this.state.current}
+          images={this.state.images}
         />
-    } else {
-      var flashcardComponent = null
-    }
 
     return (
       <div>
@@ -117,19 +108,12 @@ class App extends Component {
             onShowLikes={this.handleShowLikes}
             onArtDetailClick={this.handleArtDetailClick}
           />
-          {/* <ArtDetail 
-            artwork={this.state.current}
-            images={this.state.images}
-            onTimerEnd={this.next}
-          /> */}
-          {/* {artCarousel} */}
-          {flashcardComponent}
+          {artCarousel}
+          {/* {flashcardComponent} */}
         </div>
       </div>
     )
-    
   }
-  
 }
 
 export default App
