@@ -3,7 +3,6 @@ import { API } from '../../config'
 
 import Header from '../header/Header'
 import ArtList from '../art-list/ArtList'
-// import ArtDetailContainer from '../art-detail/ArtDetailContainer'
 // import ArtDetail from '../art-detail/ArtDetail'
 import Flashcard from '../flashcard/Flashcard'
 

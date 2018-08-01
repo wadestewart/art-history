@@ -41,7 +41,7 @@ class Flashcard extends Component {
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
         .then(res => res.json())
         .then(data => {
-            let newImage = data.object.images[0].z.url
+            let newImage = data.object.images[0].b.url
             this.setState({ artwork: data.object })
             this.setState({ imageUrl: newImage })
         })
