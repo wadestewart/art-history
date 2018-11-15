@@ -15,7 +15,7 @@ class ArtCard extends Component {
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
             .then(res => res.json())
             .then(data => {
-                let newImage = data.images[0].z.url
+                let newImage = data.images[0].n.url
                 this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
             })
             .catch(err => console.log(err))

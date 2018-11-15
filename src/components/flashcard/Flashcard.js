@@ -23,7 +23,7 @@ class Flashcard extends Component {
             clearTimeout(this.state.currentTimeout)
             this.setState(prevState => ({
                 timer: prevState.timer -1,
-                currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+                currentTimeout: window.setTimeout(this.decrementTimer, 3000)
             }))
         }
     }
@@ -32,7 +32,7 @@ class Flashcard extends Component {
         const artwork = this.props.flashcard
         
         this.setState({
-            currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+            currentTimeout: window.setTimeout(this.decrementTimer, 3000)
         })
         
         fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
