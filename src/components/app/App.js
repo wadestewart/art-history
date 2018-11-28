@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { API } from '../../config'
+// import { API } from '../../config'
 
 import Header from '../header/Header'
 import ArtList from '../art-list/ArtList'
@@ -40,7 +40,8 @@ class App extends Component {
 
   handleArtDetailClick = (artwork) => {
     console.log('Fetching data for ' + artwork.title)
-    fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
+    fetch(`http://localhost:3001/:${artwork.id}`)
+    // fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState(prevState => ({ show: !prevState.show }))
@@ -66,14 +67,14 @@ class App extends Component {
     fetch('http://localhost:3001/')
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.setState({ artworks: data.objects })
       })
       .catch(err => console.log(err))
   }
       
   render() {
-    console.log(this.state.show)
+    console.log(this.state.artworks)
     let flashcard = this.state.artworks[this.state.currentIndex]   
 
     let artCarousel = 
