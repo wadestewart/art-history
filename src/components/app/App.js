@@ -40,13 +40,15 @@ class App extends Component {
 
   handleArtDetailClick = (artwork) => {
     console.log('Fetching data for ' + artwork.title)
-    fetch(`http://localhost:3001/:${artwork.id}`)
+    fetch(`http://localhost:3001/${artwork.id}`)
     // fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
+      // .then(res => console.log(res))
       .then(res => res.json())
       .then(data => {
-        this.setState(prevState => ({ show: !prevState.show }))
-        this.setState({ current: data.object })
-        this.setState({ images: this.state.current.images[0] })
+        console.log(data)
+        // this.setState(prevState => ({ show: !prevState.show }))
+        // this.setState({ current: data.object })
+        // this.setState({ images: this.state.current.images[0] })
       })
       .catch(err => console.log(err))
   }
@@ -74,7 +76,7 @@ class App extends Component {
   }
       
   render() {
-    console.log(this.state.artworks)
+    // console.log(this.state.artworks)
     let flashcard = this.state.artworks[this.state.currentIndex]   
 
     let artCarousel = 
