@@ -4,27 +4,26 @@ import ArtImage from '../art-image/ArtImage'
 import Like from '../like/Like'
 
 class ArtCard extends Component {
-    constructor(props) {
-        super(props)
-        // console.log(this.props)
+    constructor() {
+        super()
         
         this.state = {
             imageUrls: []
         }
     }
 
+    componentDidMount = () => {
+        let artwork = this.props.artwork
 
-    // componentDidMount = () => {
-    //     let artwork = this.props.artwork
-
-    //     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getImages&access_token=${API.apiKey}&id=${artwork.id}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             let newImage = data.images[0].n.url
-    //             this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+        fetch(`http://localhost:3001/${artwork.id}`)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data.object.images)
+                let newImage = data.object.images[0].n.url
+                this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
+            })
+            .catch(err => console.log(err))
+    }
 
     render() {
         let imageUrls = this.state.imageUrls

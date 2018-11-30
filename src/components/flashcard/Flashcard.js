@@ -6,7 +6,7 @@ class Flashcard extends Component {
         super(props)
 
         this.decrementTimer = this.decrementTimer.bind(this)
-        // this.fetchData = this.fetchData.bind(this)
+        this.fetchData = this.fetchData.bind(this)
 
         this.state = {
             currentTimeout: null,
@@ -28,29 +28,29 @@ class Flashcard extends Component {
         }
     }
 
-    // fetchData = () => {
-    //     const artwork = this.props.flashcard
+    fetchData = () => {
+        const artwork = this.props.flashcard
         
-    //     this.setState({
-    //         currentTimeout: window.setTimeout(this.decrementTimer, 3000)
-    //     })
+        this.setState({
+            currentTimeout: window.setTimeout(this.decrementTimer, 3000)
+        })
         
-    //     fetch(`${API.apiUrl}?method=cooperhewitt.objects.getInfo&access_token=${API.apiKey}&id=${artwork.id}`)
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         let newImage = data.object.images[0].b.url
-    //         this.setState({ artwork: data.object })
-    //         this.setState({ imageUrl: newImage })
-    //     })
-    //     .catch(err => console.log(err))
-    // }
+        fetch(`http://localhost:3001/${artwork.id}`)
+            .then(res => res.json())
+            .then(data => {
+                let newImage = data.object.images[0].b.url
+                this.setState({ artwork: data.object })
+                this.setState({ imageUrl: newImage })
+            })
+            .catch(err => console.log(err))
+    }
 
     
     componentDidMount = () => {
         this.setState({
             currentTimeout: window.setTimeout(this.decrementTimer, 1000)
         })
-        // this.fetchData()
+        this.fetchData()
     }
 
     componentDidUpdate = (prevProps) => {
@@ -60,7 +60,7 @@ class Flashcard extends Component {
                 timer: 1,
                 currentTimeout: window.setTimeout(this.decrementTimer, 1000)
             })
-            // this.fetchData()
+            this.fetchData()
         }
     }
 
