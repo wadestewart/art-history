@@ -1,8 +1,8 @@
 import React from 'react'
 
 function ArtDetail(props) {
-    console.log(props.images.n)
-    let bigPics = props.images.n
+    console.log(props.images)
+    let bigPics = props.images.b
     let bigPicData = []
     
     for (let key in bigPics) {

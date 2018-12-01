@@ -19,7 +19,7 @@ class ArtCard extends Component {
             .then(res => res.json())
             .then(data => {
                 // console.log(data.object.images)
-                let newImage = data.object.images[0].n.url
+                let newImage = data.object.images[0].sq.url
                 this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
             })
             .catch(err => console.log(err))

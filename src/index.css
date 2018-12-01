@@ -66,13 +66,14 @@ figure {
 }
 
 .art-column-like {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 2rem;
-  font-weight: 800;
-  padding: 0 0.2em;
   background-color: transparent;
+  bottom: 0;
+  height: 3.5rem;
+  /* font-weight: 800; */
+  /* font-size: 1rem; */
+  padding: 0 0.2em;
+  position: absolute;
+  right: 0;
   transition: all 0.1s linear;
 }
 
@@ -82,7 +83,7 @@ figure {
 
 .art-summary {
   background-color: white;
-  padding: 0.5em 1.5em;
+  padding: 0.25rem 1.5rem 0.25rem 1rem;
 }
 
 .art-summary > h1 {
@@ -100,7 +101,6 @@ figure {
 .art-list-show-states {
   display: flex;
   justify-content: center;
-  /* left: 0; */
   margin: 1.9rem 0 0 0;
   position: fixed;
   top: 1.6em;
@@ -163,7 +163,6 @@ figure {
   line-height: 1.45;
   margin: 0.4rem;
   padding: 1em 1.5em;
-  /* width: 100%; */
 }
 
 .art-description {
@@ -173,7 +172,6 @@ figure {
 }
 
 .label-text {
-  /* color: #000; */
   font-weight: 500;
   margin: 1rem 0 0 0;
   text-align: center;
