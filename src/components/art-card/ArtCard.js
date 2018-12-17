@@ -36,7 +36,7 @@ class ArtCard extends Component {
                 />
     
                 <div className="art-summary">
-                    <h2>{this.props.artwork.title}</h2>
+                    <h1>{this.props.artwork.title}</h1>
                     <p>{this.props.artwork.medium}</p>
                 </div>
 

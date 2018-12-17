@@ -2,7 +2,7 @@ import React from 'react'
 
 function ArtDetail(props) {
     console.log(props.images)
-    let bigPics = props.images.b
+    let bigPics = props.images.z
     let bigPicData = []
     
     for (let key in bigPics) {
@@ -16,29 +16,29 @@ function ArtDetail(props) {
         // console.log('Both statements true!')
         detail = (
             <div className="art-detail">
+                <div className="detailed-info">
+                    <h4 className="label-text">{props.artwork.label_text}</h4>
+                </div>
                 <figure className="large-image">
                     <img src={largeImgUrl} alt="" />
-                    <h1 className="piece-title">{props.artwork.title}</h1>
-                </figure>
-                <div className="detailed-info">
-                    <h2 className="art-description">{props.artwork.description}</h2>
-                    <p className="label-text">{props.artwork.label_text}</p>
+                    <h2 className="piece-title">{props.artwork.title}</h2>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
-                </div>
+                </figure>
+                    <h2 className="art-description">{props.artwork.description}</h2>
             </div>
         )
     } else {
         // console.log('Which statement is false? Probably the label_text.')
         detail = (
             <div className="art-detail">
+                <div className="detailed-info">
+                    <h4 className="art-description">{props.artwork.description}</h4>
+                </div>
                 <figure className="large-image">
                     <img src={largeImgUrl} alt="" />
-                    <h1 className="piece-title">{props.artwork.title}</h1>
-                </figure>
-                <div className="detailed-info">
-                    <h2 className="art-description">{props.artwork.description}</h2>
+                    <h2 className="piece-title">{props.artwork.title}</h2>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
-                </div>
+                </figure>
             </div>
         )
     }

@@ -74,29 +74,29 @@ class Flashcard extends Component {
             // console.log('Both statements true!')
             detail = (
                 <div className="art-detail">
+                    <div className="detailed-info">
+                        <h3 className="art-description">{artwork.description}</h3>
+                        <h4 className="label-text">{artwork.label_text}</h4>
+                    </div>
                     <figure className="large-image">
                         <img src={imgUrl} alt="" />
-                        <h1 className="piece-title">{artwork.title}</h1>
-                    </figure>
-                    <div className="detailed-info">
-                        <h2 className="art-description">{artwork.description}</h2>
-                        <p className="label-text">{artwork.label_text}</p>
+                        <h2 className="piece-title">{artwork.title}</h2>
                         <h4 className="art-credit">{artwork.creditline}</h4>
-                    </div>
+                    </figure>
                 </div>
             )
         } else {
             // console.log('Which statement is false? Probably the label_text.')
             detail = (
                 <div className="art-detail">
+                    <div className="detailed-info">
+                        <h4 className="art-description">{artwork.description}</h4>
+                    </div>
                     <figure className="large-image">
                         <img src={imgUrl} alt="" />
-                        <h1 className="piece-title">{artwork.title}</h1>
-                    </figure>
-                    <div className="detailed-info">
-                        <h2 className="art-description">{artwork.description}</h2>
+                        <h2 className="piece-title">{artwork.title}</h2>
                         <h4 className="art-credit">{artwork.creditline}</h4>
-                    </div>
+                    </figure>
                 </div>
             )
         }
