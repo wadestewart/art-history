@@ -28,17 +28,17 @@ class App extends Component {
     const artworkIndex = likes.indexOf(artwork)
 
     if (artworkIndex > -1) {
-      console.log('I do not like ' + artwork.title + ' anymore')
+      // console.log('I do not like ' + artwork.title + ' anymore')
       likes.splice(artworkIndex, 1)
     } else {
-      console.log('I like ' + artwork.title + '!')
+      // console.log('I like ' + artwork.title + '!')
       likes.push(artwork)
     }
     this.setState({ likes })
   }
 
   handleArtDetailClick = (artwork) => {
-    console.log('Fetching data for ' + artwork.title)
+    // console.log('Fetching data for ' + artwork.title)
     fetch(`http://localhost:3001/${artwork.id}`)
       .then(res => res.json())
       .then(data => {

@@ -17,6 +17,7 @@ function ArtDetail(props) {
         detail = (
             <div className="art-detail">
                 <div className="detailed-info">
+                    <h4 className="art-description">{props.artwork.description}</h4>
                     <h4 className="label-text">{props.artwork.label_text}</h4>
                 </div>
                 <figure className="large-image">
@@ -24,7 +25,6 @@ function ArtDetail(props) {
                     <h2 className="piece-title">{props.artwork.title}</h2>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
                 </figure>
-                    <h2 className="art-description">{props.artwork.description}</h2>
             </div>
         )
     } else {

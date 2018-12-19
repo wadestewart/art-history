@@ -75,7 +75,7 @@ class Flashcard extends Component {
             detail = (
                 <div className="art-detail">
                     <div className="detailed-info">
-                        <h3 className="art-description">{artwork.description}</h3>
+                        <h4 className="art-description">{artwork.description}</h4>
                         <h4 className="label-text">{artwork.label_text}</h4>
                     </div>
                     <figure className="large-image">
