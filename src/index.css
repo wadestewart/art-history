@@ -89,7 +89,6 @@ figure {
 .art-summary > p {
   font-size: 1rem;
   font-weight: 200;
-  line-height: 1.35;
   margin-top: 0;
 }
 
@@ -149,20 +148,14 @@ figure {
 .title-h3 {
   color: #000;
   margin: 1rem 0 0 0;
-  padding: 1rem 0 0 0;
+  padding-top: 1rem;
 }
 
 .details-h3 {
   color: #000;
   margin: 0;
-  padding: 1rem 0 0 0;
+  padding-top: 1rem;
 }
-
-/* .detailed-info > h3 {
-  color: #000;
-  margin: 1rem 0 0 0;
-  padding: 1rem 0 0 0;
-} */
 
 .detailed-info > h4 {
   margin: 0.5rem 0 1rem 0;
