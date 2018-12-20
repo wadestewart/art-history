@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { API } from '../../config'
 
 class Flashcard extends Component {
     constructor(props) {
@@ -74,29 +73,29 @@ class Flashcard extends Component {
             // console.log('Both statements true!')
             detail = (
                 <div className="art-detail">
-                    <div className="detailed-info">
-                        <h4 className="art-description">{artwork.description}</h4>
-                        <h4 className="label-text">{artwork.label_text}</h4>
-                    </div>
                     <figure className="large-image">
                         <img src={imgUrl} alt="" />
-                        <h2 className="piece-title">{artwork.title}</h2>
-                        <h4 className="art-credit">{artwork.creditline}</h4>
                     </figure>
+                    <div className="detailed-info">
+                        <h4 className="piece-title">{artwork.title}</h4>
+                        <h4 className="art-description">{artwork.description}</h4>
+                        <h4 className="label-text">{artwork.label_text}</h4>
+                        <h4 className="art-credit">{artwork.creditline}</h4>
+                    </div>
                 </div>
             )
         } else {
             // console.log('Which statement is false? Probably the label_text.')
             detail = (
                 <div className="art-detail">
-                    <div className="detailed-info">
-                        <h4 className="art-description">{artwork.description}</h4>
-                    </div>
                     <figure className="large-image">
                         <img src={imgUrl} alt="" />
-                        <h2 className="piece-title">{artwork.title}</h2>
-                        <h4 className="art-credit">{artwork.creditline}</h4>
                     </figure>
+                    <div className="detailed-info">
+                        <h4 className="piece-title">{artwork.title}</h4>
+                        <h4 className="art-description">{artwork.description}</h4>
+                        <h4 className="art-credit">{artwork.creditline}</h4>
+                    </div>
                 </div>
             )
         }

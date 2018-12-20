@@ -70,7 +70,6 @@ class App extends Component {
   }
       
   render() {
-    // console.log(this.state.currentIndex)
     let flashcard = this.state.artworks[this.state.currentIndex]   
 
     let artCarousel = 
