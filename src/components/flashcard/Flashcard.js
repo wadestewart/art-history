@@ -63,37 +63,69 @@ class Flashcard extends Component {
         }
     }
 
-
     render() {
         let imgUrl = this.state.imageUrl
         let artwork = this.state.artwork
         let detail
 
-        if (artwork.id && artwork.label_text !== null) {
+        if (artwork.gallery_text !== null) {
             // console.log('Both statements true!')
             detail = (
                 <div className="art-detail">
                     <figure className="large-image">
-                        <img src={imgUrl} alt="" />
+                        <img src={imgUrl} alt="Image of Artwork" />
                     </figure>
                     <div className="detailed-info">
+                        <h3>Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title}</h4>
-                        <h4 className="art-description">{artwork.description}</h4>
-                        <h4 className="label-text">{artwork.label_text}</h4>
+                        <h3>Artwork Details:</h3>
+                        <h4 className="label-text">{artwork.gallery_text}</h4>
+                        <h4 className="art-credit">{artwork.creditline}</h4>
+                    </div>
+                </div>
+            )
+        } else if (artwork.label_text !== null) {
+            // console.log('Which statement is false? Probably the label_text.')
+            detail = (
+                <div className="art-detail">
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Image of Artwork" />
+                    </figure>
+                    <div className="detailed-info">
+                        <h3>Artwork Title:</h3>
+                        <h4 className="piece-title">{artwork.title}</h4>
+                        <h3>Artwork Details:</h3>
+                        <h4 className="art-description">{artwork.label_text}</h4>
+                        <h4 className="art-credit">{artwork.creditline}</h4>
+                    </div>
+                </div>
+            )
+        } else if (artwork.medium !== null) {
+            detail = (
+                <div className="art-detail">
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Image of Artwork" />
+                    </figure>
+                    <div className="detailed-info">
+                        <h3>Artwork Title:</h3>
+                        <h4 className="piece-title">{artwork.title}</h4>
+                        <h3>Artwork Details:</h3>
+                        <h4 className="art-description">{artwork.medium}</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
                 </div>
             )
         } else {
-            // console.log('Which statement is false? Probably the label_text.')
             detail = (
                 <div className="art-detail">
                     <figure className="large-image">
-                        <img src={imgUrl} alt="" />
+                        <img src={imgUrl} alt="Image of Artwork" />
                     </figure>
                     <div className="detailed-info">
+                        <h3>Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title}</h4>
-                        <h4 className="art-description">{artwork.description}</h4>
+                        <h3>Artwork Details:</h3>
+                        <h4 className="art-description">No Details Available</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
                 </div>

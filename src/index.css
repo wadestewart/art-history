@@ -140,12 +140,23 @@ figure {
 }
 
 .detailed-info {
+  display: flex;
   flex: 1 0 40%;
+  flex-flow: column nowrap;
+  /* justify-content: center; */
   padding: 0 0.5rem;
+}
+
+.detailed-info > h3 {
+  color: #000;
+  margin: 0;
+  padding: 1rem 0 0 0;
+}
+
+.detailed-info > h4 {
+  margin: 0.5rem 0 1rem 0;
 }
 
 .art-credit {
   font-weight: 400;
-  /* margin: 0 0 0.5rem 0;
-  padding: 0.25em 1.5rem; */
 }
