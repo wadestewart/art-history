@@ -17,7 +17,6 @@ class ArtCard extends Component {
         fetch(`http://localhost:3001/${artwork.id}`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data.object.images)
                 let newImage = data.object.images[0].n.url
                 this.setState({ imageUrls: this.state.imageUrls.concat(newImage) })
             })
@@ -29,7 +28,6 @@ class ArtCard extends Component {
         let detail
 
         if (this.props.artwork.title_raw !== null && this.props.artwork.title_raw !== "") {
-            // console.log('title is raw!')
 
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
@@ -51,9 +49,6 @@ class ArtCard extends Component {
                 </div>
             )
         } else if (this.props.artwork.title !== null) {
-            // console.log('title is not raw!')
-            console.log(this.props.artwork.title)
-
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
 
@@ -74,8 +69,6 @@ class ArtCard extends Component {
                 </div>
             )
         } else {
-            console.log('title is neither raw or not raw!')
-
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
 
