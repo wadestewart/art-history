@@ -84,7 +84,7 @@ class Flashcard extends Component {
                     </div>
                 </div>
             )
-        } else if (artwork.label_text !== null) {
+        } else if (artwork.title !== null && artwork.title !== "" && artwork.gallery_text !== null) {
             // console.log('Which statement is false? Probably the label_text.')
             detail = (
                 <div className="art-detail">
@@ -95,12 +95,27 @@ class Flashcard extends Component {
                         <h3 className="title-h3">Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title}</h4>
                         <h3 className="details-h3">Artwork Details:</h3>
+                        <h4 className="art-description">{artwork.gallery_text}</h4>
+                        <h4 className="art-credit">{artwork.creditline}</h4>
+                    </div>
+                </div>
+            )
+        } else if (artwork.title_raw !== null && artwork.title_raw !== "" && artwork.label_text !== null) {
+            detail = (
+                <div className="art-detail">
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Artwork" />
+                    </figure>
+                    <div className="detailed-info">
+                        <h3 className="title-h3">Artwork Title:</h3>
+                        <h4 className="piece-title">{artwork.title_raw}</h4>
+                        <h3 className="details-h3">Artwork Details:</h3>
                         <h4 className="art-description">{artwork.label_text}</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
                 </div>
             )
-        } else if (artwork.medium !== null) {
+        } else if (artwork.title !== null && artwork.title !== "" && artwork.label_text !== null) {
             detail = (
                 <div className="art-detail">
                     <figure className="large-image">
@@ -110,7 +125,7 @@ class Flashcard extends Component {
                         <h3 className="title-h3">Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title}</h4>
                         <h3 className="details-h3">Artwork Details:</h3>
-                        <h4 className="art-description">{artwork.medium}</h4>
+                        <h4 className="art-description">{artwork.label_text}</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
                 </div>

@@ -3,8 +3,8 @@ import ArtImage from '../art-image/ArtImage'
 import Like from '../like/Like'
 
 class ArtCard extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         
         this.state = {
             imageUrls: []

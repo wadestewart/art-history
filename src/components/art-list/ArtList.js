@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import ArtCard from '../art-card/ArtCard'
 
 class ArtList extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        console.log(props)
+        super(props)
 
         this.handleLikeClick = this.handleLikeClick.bind(this)
     
