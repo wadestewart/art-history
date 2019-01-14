@@ -9,6 +9,7 @@ class App extends Component {
   constructor() {
     super()
 
+    // Binding `this` for callbacks
     this.handleShowLikes = this.handleShowLikes.bind(this)
     this.handleArtDetailClick = this.handleArtDetailClick.bind(this)
 
