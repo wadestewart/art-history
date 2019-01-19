@@ -81,6 +81,10 @@ figure {
   padding: 0.25rem 1.5rem 0.25rem 1rem;
 }
 
+.art-summary:hover {
+  background-color: hsl(51, 100%, 50%);
+}
+
 .art-summary > h1 {
   color: #000;
   margin-bottom: 0.35em;
@@ -120,7 +124,7 @@ figure {
 }
 
 /* .art-list-show-state span {
-  color: 
+  color: gold;
 } */
 
 .art-detail {
