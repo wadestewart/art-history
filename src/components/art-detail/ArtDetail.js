@@ -1,14 +1,8 @@
 import React from 'react'
 
 function ArtDetail(props) {
-    let bigPics = props.images.z
-    let bigPicData = []
-    
-    for (let key in bigPics) {
-        bigPicData.push(bigPics[key])
-    }
-    
-    let largeImgUrl = bigPicData[0]
+    // console.log(props)
+    let largeImgUrl = props.image.url
     let detail
 
     if (props.artwork.title_raw !== null && props.artwork.title_raw !== "" && props.artwork.gallery_text !== null) {

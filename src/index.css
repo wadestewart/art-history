@@ -65,11 +65,15 @@ figure {
 .art-column-like {
   background-color: transparent;
   bottom: 0;
-  height: 3.5rem;
-  padding: 0 2.5em;
+  height: 2rem;
+  padding: 0 2.5em 0 0;
   position: absolute;
   right: 0;
   transition: all 0.1s linear;
+}
+
+.art-column-like p {
+  margin: 0;
 }
 
 .art-column-like.favorite {

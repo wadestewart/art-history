@@ -8,10 +8,10 @@ class Flashcard extends Component {
         this.fetchData = this.fetchData.bind(this)
 
         this.state = {
+            artwork: [],
             currentTimeout: null,
-            timer: 1,
             imageUrl: '',
-            artwork: []
+            timer: 1
         }
     }
 
@@ -46,9 +46,6 @@ class Flashcard extends Component {
 
     
     componentDidMount = () => {
-        this.setState({
-            currentTimeout: window.setTimeout(this.decrementTimer, 1000)
-        })
         this.fetchData()
     }
 
@@ -69,7 +66,6 @@ class Flashcard extends Component {
         let detail
 
         if (artwork.title_raw !== null && artwork.title_raw !== "" && artwork.gallery_text !== null) {
-            // console.log('Both statements true!')
             detail = (
                 <div className="art-detail">
                     <figure className="large-image">
@@ -85,7 +81,6 @@ class Flashcard extends Component {
                 </div>
             )
         } else if (artwork.title !== null && artwork.title !== "" && artwork.gallery_text !== null) {
-            // console.log('Which statement is false? Probably the label_text.')
             detail = (
                 <div className="art-detail">
                     <figure className="large-image">

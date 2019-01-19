@@ -15,7 +15,7 @@ class App extends Component {
 
     this.state = {
       artworks: [],
-      images: [],
+      image: [],
       current:  {},
       likes: [],
       currentIndex: 0,
@@ -42,7 +42,7 @@ class App extends Component {
       .then(data => {
         this.setState(prevState => ({ show: !prevState.show }))
         this.setState({ current: data.object })
-        this.setState({ images: this.state.current.images[0] })
+        this.setState({ image: this.state.current.images[0].z })
       })
       .catch(err => console.log(err))
   }
@@ -68,13 +68,12 @@ class App extends Component {
   }
       
   render() {
-    console.log(this.state.images)
+    // console.log(this.state.images)
     let artList =
       this.state.artworks.length !== 0 ?
         <ArtList
           artworks={this.state.artworks}
           likes={this.state.likes}
-          images={this.state.images}
           onShowLikes={this.handleShowLikes}
           onArtDetailClick={this.handleArtDetailClick}
         />
@@ -93,7 +92,7 @@ class App extends Component {
         : null 
       : <ArtDetail
           artwork={this.state.current}
-          images={this.state.images}
+          image={this.state.image}
         />
 
     return (

@@ -4,7 +4,7 @@ import ArtCard from '../art-card/ArtCard'
 class ArtList extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
+        // console.log(props)
 
         this.handleLikesClick = this.handleLikesClick.bind(this)
     
