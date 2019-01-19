@@ -68,7 +68,20 @@ class App extends Component {
   }
       
   render() {
-    let flashcard = this.state.artworks[this.state.currentIndex]   
+    console.log(this.state.images)
+    let artList =
+      this.state.artworks.length !== 0 ?
+        <ArtList
+          artworks={this.state.artworks}
+          likes={this.state.likes}
+          images={this.state.images}
+          onShowLikes={this.handleShowLikes}
+          onArtDetailClick={this.handleArtDetailClick}
+        />
+      :
+        null
+
+    let flashcard = this.state.artworks[this.state.currentIndex]
 
     let artCarousel = 
       (this.state.current !== true && this.state.show !== true)
@@ -87,13 +100,7 @@ class App extends Component {
       <div>
         <Header />
         <div className="art-library">
-          <ArtList
-            artworks={this.state.artworks}
-            likes={this.state.likes}
-            images={this.state.images}
-            onShowLikes={this.handleShowLikes}
-            onArtDetailClick={this.handleArtDetailClick}
-          />
+          {artList}
           {artCarousel}
         </div>
       </div>

@@ -119,6 +119,10 @@ figure {
   background-color: hsl(51, 100%, 50%);
 }
 
+/* .art-list-show-state span {
+  color: 
+} */
+
 .art-detail {
   display: flex;
   overflow: hidden;

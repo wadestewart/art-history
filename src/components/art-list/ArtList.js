@@ -3,17 +3,17 @@ import ArtCard from '../art-card/ArtCard'
 
 class ArtList extends Component {
     constructor(props) {
-        console.log(props)
         super(props)
+        console.log(props)
 
-        this.handleLikeClick = this.handleLikeClick.bind(this)
+        this.handleLikesClick = this.handleLikesClick.bind(this)
     
         this.state = {
             show: 'all'
         }
     }
 
-    handleLikeClick = (show) => {
+    handleLikesClick = (show) => {
         console.log('Showing: ' + show)
         this.setState({ show: show })
     }
@@ -40,12 +40,12 @@ class ArtList extends Component {
 
                 <div className="art-list-show-states">
 
-                    <div  className={`art-list-show-state ${this.state.show === 'all' ? 'is active' : ''}`} onClick={() => this.handleLikeClick('all')}>
-                        ALL
+                    <div  className={`art-list-show-state ${this.state.show === 'all' ? 'is active' : ''}`} onClick={() => this.handleLikesClick('all')}>
+                        ARTWORKS: <span>{this.props.artworks.length}</span>
                     </div>
 
-                    <div  className={`art-list-show-state ${this.state.show === 'likes' ? 'is active' : ''}`} onClick={() => this.handleLikeClick('likes')}>
-                        LIKES
+                    <div  className={`art-list-show-state ${this.state.show === 'likes' ? 'is active' : ''}`} onClick={() => this.handleLikesClick('likes')}>
+                        LIKES: <span>{this.props.likes.length}</span>
                     </div>
 
                 </div>
