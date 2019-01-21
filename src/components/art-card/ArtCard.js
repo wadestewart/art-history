@@ -14,7 +14,7 @@ class ArtCard extends Component {
     componentDidMount = () => {
         let artwork = this.props.artwork
 
-        fetch(`http://localhost:3001/${artwork.id}`)
+        fetch(`https://art-history-back.herokuapp.com/${artwork.id}`)
             .then(res => res.json())
             .then(data => {
                 let newImage = data.object.images[0].n.url
@@ -32,10 +32,6 @@ class ArtCard extends Component {
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
 
-                    <ArtImage
-                        imageUrl={imageUrls}
-                    />
-        
                     <div className="art-summary">
                         <h1>{this.props.artwork.title_raw}</h1>
                         <p>{this.props.artwork.medium}</p>
@@ -46,16 +42,16 @@ class ArtCard extends Component {
                         isLiked={this.props.isLiked}
                     />
 
+                    <ArtImage
+                        imageUrl={imageUrls}
+                    />
+
                 </div>
             )
         } else if (this.props.artwork.title !== null) {
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
 
-                    <ArtImage
-                        imageUrl={imageUrls}
-                    />
-        
                     <div className="art-summary">
                         <h1>{this.props.artwork.title}</h1>
                         <p>{this.props.artwork.medium}</p>
@@ -64,6 +60,10 @@ class ArtCard extends Component {
                     <Like
                         onShowLikes={this.props.onShowLikes}
                         isLiked={this.props.isLiked}
+                    />
+
+                    <ArtImage
+                        imageUrl={imageUrls}
                     />
 
                 </div>

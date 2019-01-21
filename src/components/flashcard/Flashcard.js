@@ -34,7 +34,7 @@ class Flashcard extends Component {
             currentTimeout: window.setTimeout(this.decrementTimer, 3000)
         })
         
-        fetch(`http://localhost:3001/${artwork.id}`)
+        fetch(`https://art-history-back.herokuapp.com/${artwork.id}`)
             .then(res => res.json())
             .then(data => {
                 let newImage = data.object.images[0].b.url
@@ -54,7 +54,7 @@ class Flashcard extends Component {
             clearTimeout(this.state.currentTimeout)
             this.setState({
                 timer: 1,
-                currentTimeout: window.setTimeout(this.decrementTimer, 1000)
+                currentTimeout: window.setTimeout(this.decrementTimer, 3000)
             })
             this.fetchData()
         }
@@ -68,9 +68,6 @@ class Flashcard extends Component {
         if (artwork.title_raw !== null && artwork.title_raw !== "" && artwork.gallery_text !== null) {
             detail = (
                 <div className="art-detail">
-                    <figure className="large-image">
-                        <img src={imgUrl} alt="Artwork" />
-                    </figure>
                     <div className="detailed-info">
                         <h3 className="title-h3">Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title_raw}</h4>
@@ -78,14 +75,14 @@ class Flashcard extends Component {
                         <h4 className="label-text">{artwork.gallery_text}</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Artwork" />
+                    </figure>
                 </div>
             )
         } else if (artwork.title !== null && artwork.title !== "" && artwork.gallery_text !== null) {
             detail = (
                 <div className="art-detail">
-                    <figure className="large-image">
-                        <img src={imgUrl} alt="Artwork" />
-                    </figure>
                     <div className="detailed-info">
                         <h3 className="title-h3">Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title}</h4>
@@ -93,14 +90,14 @@ class Flashcard extends Component {
                         <h4 className="art-description">{artwork.gallery_text}</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Artwork" />
+                    </figure>
                 </div>
             )
         } else if (artwork.title_raw !== null && artwork.title_raw !== "" && artwork.label_text !== null) {
             detail = (
                 <div className="art-detail">
-                    <figure className="large-image">
-                        <img src={imgUrl} alt="Artwork" />
-                    </figure>
                     <div className="detailed-info">
                         <h3 className="title-h3">Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title_raw}</h4>
@@ -108,14 +105,14 @@ class Flashcard extends Component {
                         <h4 className="art-description">{artwork.label_text}</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Artwork" />
+                    </figure>
                 </div>
             )
         } else if (artwork.title !== null && artwork.title !== "" && artwork.label_text !== null) {
             detail = (
                 <div className="art-detail">
-                    <figure className="large-image">
-                        <img src={imgUrl} alt="Artwork" />
-                    </figure>
                     <div className="detailed-info">
                         <h3 className="title-h3">Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title}</h4>
@@ -123,14 +120,14 @@ class Flashcard extends Component {
                         <h4 className="art-description">{artwork.label_text}</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Artwork" />
+                    </figure>
                 </div>
             )
         } else {
             detail = (
                 <div className="art-detail">
-                    <figure className="large-image">
-                        <img src={imgUrl} alt="Artwork" />
-                    </figure>
                     <div className="detailed-info">
                         <h3 className="title-h3">Artwork Title:</h3>
                         <h4 className="piece-title">{artwork.title}</h4>
@@ -138,6 +135,9 @@ class Flashcard extends Component {
                         <h4 className="art-description">No Details Available</h4>
                         <h4 className="art-credit">{artwork.creditline}</h4>
                     </div>
+                    <figure className="large-image">
+                        <img src={imgUrl} alt="Artwork" />
+                    </figure>
                 </div>
             )
         }

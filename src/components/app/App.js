@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   handleArtDetailClick = (artwork) => {
-    fetch(`http://localhost:3001/${artwork.id}`)
+    fetch(`https://art-history-back.herokuapp.com/${artwork.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState(prevState => ({ show: !prevState.show }))
@@ -59,7 +59,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:3001/')
+    fetch('https://art-history-back.herokuapp.com/')
       .then(res => res.json())
       .then(data => {
         this.setState({ artworks: data.objects })
@@ -99,8 +99,8 @@ class App extends Component {
       <div>
         <Header />
         <div className="art-library">
-          {artList}
           {artCarousel}
+          {artList}
         </div>
       </div>
     )

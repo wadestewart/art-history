@@ -40,12 +40,12 @@ class ArtList extends Component {
 
                 <div className="art-list-show-states">
 
-                    <div  className={`art-list-show-state ${this.state.show === 'all' ? 'is active' : ''}`} onClick={() => this.handleLikesClick('all')}>
-                        ARTWORKS: <span>{this.props.artworks.length}</span>
-                    </div>
-
                     <div  className={`art-list-show-state ${this.state.show === 'likes' ? 'is active' : ''}`} onClick={() => this.handleLikesClick('likes')}>
                         LIKES: <span>{this.props.likes.length}</span>
+                    </div>
+
+                    <div  className={`art-list-show-state ${this.state.show === 'all' ? 'is active' : ''}`} onClick={() => this.handleLikesClick('all')}>
+                        ARTWORKS: <span>{this.props.artworks.length}</span>
                     </div>
 
                 </div>
