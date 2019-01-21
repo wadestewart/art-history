@@ -38,8 +38,10 @@ class Flashcard extends Component {
             .then(res => res.json())
             .then(data => {
                 let newImage = data.object.images[0].b.url
-                this.setState({ artwork: data.object })
-                this.setState({ imageUrl: newImage })
+                this.setState({
+                    artwork: data.object,
+                    imageUrl: newImage
+                 })
             })
             .catch(err => console.log(err))
     }
