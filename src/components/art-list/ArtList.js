@@ -4,7 +4,6 @@ import './ArtList.css'
 
 class ArtList extends Component {
     constructor(props) {
-        console.log(props)
         super(props)
         this.handleLikesClick = this.handleLikesClick.bind(this)
         this.state = {
