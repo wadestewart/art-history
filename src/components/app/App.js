@@ -9,6 +9,7 @@ class App extends Component {
     super()
 
     // Binding `this` for callbacks
+    this.handleReload = this.handleReload.bind(this)
     this.handleShowLikes = this.handleShowLikes.bind(this)
     this.handleArtDetailClick = this.handleArtDetailClick.bind(this)
 
@@ -21,6 +22,10 @@ class App extends Component {
       timer: 2,
       show: false
     }
+  }
+
+  handleReload = () => {
+    this.setState({ image: [] })
   }
 
   handleShowLikes = (artwork) => {
@@ -80,7 +85,9 @@ class App extends Component {
 
     return (
       <div>
-        <Header />
+        <Header
+          onReload={this.handleReload}
+        />
         <div className="art-library">
           {artList}
           <ArtDetail
