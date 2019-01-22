@@ -1,5 +1,6 @@
 {
   "name": "art-history",
+  "homepage": "https://wadestewart.github.io/art-history/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
