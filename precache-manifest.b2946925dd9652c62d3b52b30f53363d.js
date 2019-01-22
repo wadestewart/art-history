@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/art-history/static/media/cooperhewitt.ab5a7244.jpg"
   },
   {
-    "revision": "a5e54861933d0eeaf26234c1830557e7",
+    "revision": "46ada6508ed761bc2b963dd90fd46dd7",
     "url": "/art-history/index.html"
   }
 ];
