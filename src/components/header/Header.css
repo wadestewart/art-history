@@ -1,9 +1,10 @@
 .header {
     background: #000;
     border-bottom: 1px solid #d3d3d3;
+    margin: 0.5rem 0 0 0;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 99%;
     z-index: 10;
 }
 
