@@ -34,16 +34,16 @@ h3 {
     and (max-width: 765px)
     and (orientation: portrait) {
         .header {
-            position: unset;
-            /* width: 100%; */
+            margin: 0.5rem 0 0 0;
+            width: 95.6%;
         }
 
         nav {
             justify-content: center;
+            padding: 0;
         }
 
         .header > nav > h2 {
-            /* font-size: 1.5em; */
             margin: 0;
         }
 

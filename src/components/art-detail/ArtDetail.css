@@ -9,6 +9,7 @@
     background-color: #f0f0f0;
     flex: 0 1 66.666666%;
     height: 100vh;
+    overflow-y: scroll;
 }
 
 .art-detail {
