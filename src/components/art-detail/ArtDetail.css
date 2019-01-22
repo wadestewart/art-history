@@ -13,7 +13,7 @@
 
 .art-detail {
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     min-height: 100vh;
     padding: 3rem 0 0 0;
     width: 100%;
