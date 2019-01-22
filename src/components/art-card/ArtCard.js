@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ArtImage from '../art-image/ArtImage'
 import Like from '../like/Like'
+import './ArtCard.css'
 
 class ArtCard extends Component {
     constructor(props) {
@@ -28,9 +29,12 @@ class ArtCard extends Component {
         let detail
 
         if (this.props.artwork.title_raw !== null && this.props.artwork.title_raw !== "") {
-
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
+
+                    <ArtImage
+                        imageUrl={imageUrls}
+                    />
 
                     <div className="art-summary">
                         <h1>{this.props.artwork.title_raw}</h1>
@@ -42,15 +46,15 @@ class ArtCard extends Component {
                         isLiked={this.props.isLiked}
                     />
 
-                    <ArtImage
-                        imageUrl={imageUrls}
-                    />
-
                 </div>
             )
         } else if (this.props.artwork.title !== null) {
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
+
+                    <ArtImage
+                        imageUrl={imageUrls}
+                    />
 
                     <div className="art-summary">
                         <h1>{this.props.artwork.title}</h1>
@@ -60,10 +64,6 @@ class ArtCard extends Component {
                     <Like
                         onShowLikes={this.props.onShowLikes}
                         isLiked={this.props.isLiked}
-                    />
-
-                    <ArtImage
-                        imageUrl={imageUrls}
                     />
 
                 </div>
@@ -89,7 +89,6 @@ class ArtCard extends Component {
                 </div>
             )
         }
-
         return (
             <div>
                 {detail}

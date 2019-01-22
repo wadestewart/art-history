@@ -1,0 +1,55 @@
+.landing-image, .landing-image img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.art-details {
+    background-color: #f0f0f0;
+    flex: 0 1 66.666666%;
+    height: 100vh;
+}
+
+.art-detail {
+    display: flex;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 3rem 0 0 0;
+    width: 100%;
+}
+
+.detailed-info {
+    display: flex;
+    flex: 1 0 40%;
+    flex-flow: column nowrap;
+    padding: 0 0.5rem;
+}
+
+.title-h3 {
+    color: #000;
+    margin: 1rem 0 0 0;
+    padding-top: 1rem;
+}
+
+.piece-title, .art-description, .label-text, .art-credit {
+    font-weight: 400;
+}
+
+.details-h3 {
+    color: #000;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.detailed-info > h4 {
+    margin: 0.5rem 0 1rem 0;
+}
+
+.large-image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+

@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Header from '../header/Header'
 import ArtList from '../art-list/ArtList'
 import ArtDetail from '../art-detail/ArtDetail'
-import Flashcard from '../flashcard/Flashcard'
 
 class App extends Component {
   constructor() {
@@ -68,7 +67,6 @@ class App extends Component {
   }
       
   render() {
-    // console.log(this.state.images)
     let artList =
       this.state.artworks.length !== 0 ?
         <ArtList
@@ -80,27 +78,15 @@ class App extends Component {
       :
         null
 
-    let flashcard = this.state.artworks[this.state.currentIndex]
-
-    let artCarousel = 
-      (this.state.current !== true && this.state.show !== true)
-      ? (flashcard !== undefined)
-        ? <Flashcard
-            flashcard={flashcard}
-            onTimerEnd={this.next}
-          />
-        : null 
-      : <ArtDetail
-          artwork={this.state.current}
-          image={this.state.image}
-        />
-
     return (
       <div>
         <Header />
         <div className="art-library">
-          {artCarousel}
           {artList}
+          <ArtDetail
+            artwork={this.state.current}
+            image={this.state.image}
+          />
         </div>
       </div>
     )
@@ -108,10 +94,3 @@ class App extends Component {
 }
 
 export default App
-
-// if (this.state.current !== {}) {
-//   console.log('Truthy')
-// } else {
-//   console.log('Falsy')
-// }
-

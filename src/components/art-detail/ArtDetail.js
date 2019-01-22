@@ -1,13 +1,24 @@
 import React from 'react'
 
+import './ArtDetail.css'
+import preloaderImage from './cooperhewitt.jpg'
+
 function ArtDetail(props) {
-    // console.log(props)
     let largeImgUrl = props.image.url
     let detail
 
-    if (props.artwork.title_raw !== null && props.artwork.title_raw !== "" && props.artwork.gallery_text !== null) {
+    if (props.image.length === 0 ) {
+        detail = (
+            <figure className="landing-image">
+                <img src={preloaderImage} alt="" />
+            </figure>
+        )
+    } else if (props.artwork.title_raw !== null && props.artwork.title_raw !== "" && props.artwork.gallery_text !== null) {
         detail = (
             <div className="art-detail">
+                <figure className="large-image">
+                    <img src={largeImgUrl} alt="" />
+                </figure>
                 <div className="detailed-info">
                     <h3 className="title-h3">Artwork Title:</h3>
                     <h4 className="piece-title">{props.artwork.title_raw}</h4>
@@ -15,14 +26,14 @@ function ArtDetail(props) {
                     <h4 className="label-text">{props.artwork.gallery_text}</h4>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
                 </div>
-                <figure className="large-image">
-                    <img src={largeImgUrl} alt="" />
-                </figure>
             </div>
         )
     } else if (props.artwork.title !== null && props.artwork.title !== "" && props.artwork.gallery_text !== null) {
         detail = (
             <div className="art-detail">
+                <figure className="large-image">
+                    <img src={largeImgUrl} alt="" />
+                </figure>
                 <div className="detailed-info">
                     <h3 className="title-h3">Artwork Title:</h3>
                     <h4 className="piece-title">{props.artwork.title}</h4>
@@ -30,14 +41,14 @@ function ArtDetail(props) {
                     <h4 className="label-text">{props.artwork.gallery_text}</h4>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
                 </div>
-                <figure className="large-image">
-                    <img src={largeImgUrl} alt="" />
-                </figure>
             </div>
         )
     } else if (props.artwork.title_raw !== null && props.artwork.title_raw !== "" && props.artwork.label_text !== null) {
         detail = (
             <div className="art-detail">
+                <figure className="large-image">
+                    <img src={largeImgUrl} alt="" />
+                </figure>
                 <div className="detailed-info">
                     <h3 className="title-h3">Artwork Title:</h3>
                     <h4 className="piece-title">{props.artwork.title_raw}</h4>
@@ -45,14 +56,14 @@ function ArtDetail(props) {
                     <h4 className="label-text">{props.artwork.label_text}</h4>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
                 </div>
-                <figure className="large-image">
-                    <img src={largeImgUrl} alt="" />
-                </figure>
             </div>
         )
     } else if (props.artwork.title !== null && props.artwork.title !== "" && props.artwork.label_text !== null) {
         detail = (
             <div className="art-detail">
+                <figure className="large-image">
+                    <img src={largeImgUrl} alt="" />
+                </figure>
                 <div className="detailed-info">
                     <h3 className="title-h3">Artwork Title:</h3>
                     <h4 className="piece-title">{props.artwork.title}</h4>
@@ -60,14 +71,14 @@ function ArtDetail(props) {
                     <h4 className="label-text">{props.artwork.label_text}</h4>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
                 </div>
-                <figure className="large-image">
-                    <img src={largeImgUrl} alt="" />
-                </figure>
             </div>
         )
     } else {
         detail = (
             <div className="art-detail">
+                <figure className="large-image">
+                    <img src={largeImgUrl} alt="" />
+                </figure>
                 <div className="detailed-info">
                     <h3 className="title-h3">Artwork Title:</h3>
                     <h4 className="piece-title">{props.artwork.title}</h4>
@@ -75,9 +86,6 @@ function ArtDetail(props) {
                     <h4 className="art-description">No Details Available</h4>
                     <h4 className="art-credit">{props.artwork.creditline}</h4>
                 </div>
-                <figure className="large-image">
-                    <img src={largeImgUrl} alt="" />
-                </figure>
             </div>
         )
     }
