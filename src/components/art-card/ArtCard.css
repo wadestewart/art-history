@@ -30,3 +30,17 @@
     font-weight: 200;
     margin: 0;
 }
+
+@media only screen 
+and (min-width: 375px)
+and (max-width: 812px)
+and (orientation: landscape) {
+
+    .art-summary > h1 {
+        font-size: 1.5em;
+    }
+
+    .art-summary > p {
+        font-size: 1.5em;
+    }
+}

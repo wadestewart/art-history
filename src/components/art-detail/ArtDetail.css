@@ -42,7 +42,7 @@
     padding-top: 1rem;
 }
 
-.detailed-info > h4 {
+.piece-title {
     margin: 0.5rem 0 1rem 0;
 }
 
@@ -50,7 +50,43 @@
     and (min-width: 320px)
     and (max-width: 765px)
     and (orientation: portrait) {
+        
         .art-details {
             display: none;
+        }
+    }
+
+    @media only screen 
+    and (min-width: 375px)
+    and (max-width: 812px)
+    and (orientation: landscape) {
+
+        .art-detail {
+            padding: 2.2em 0 0 0;
+        }
+
+        .title-h3 {
+            margin-top: 0.5em;
+            padding-top: 0;
+        }
+
+        .piece-title {
+            font-size: 0.8em;
+            margin: 0.5em 0 0 0;
+        }
+
+        .details-h3 {
+            margin: 1em 0 0 0;
+            padding: 0;
+        }
+
+        .label-text {
+            font-size: 0.8em;
+            margin: 1em 0 0 0;
+        }
+
+        .art-credit {
+            font-size: 0.8em;
+            font-weight: 600;
         }
     }
