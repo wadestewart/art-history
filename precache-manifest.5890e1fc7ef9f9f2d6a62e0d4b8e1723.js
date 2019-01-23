@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "6b4d7cf820059716c151",
-    "url": "/art-history/static/css/main.c50ca26e.chunk.css"
+    "revision": "25563f1744754aab5f4e",
+    "url": "/art-history/static/css/main.c9fafac2.chunk.css"
   },
   {
-    "revision": "6b4d7cf820059716c151",
-    "url": "/art-history/static/js/main.6b4d7cf8.chunk.js"
+    "revision": "25563f1744754aab5f4e",
+    "url": "/art-history/static/js/main.25563f17.chunk.js"
   },
   {
     "revision": "696988e92183e13ca1c3",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/art-history/static/media/cooperhewitt.ab5a7244.jpg"
   },
   {
-    "revision": "b66947d34b4de35c004ddb4b2a881e63",
+    "revision": "ee4afb43c00797ba6a8703538bcc7540",
     "url": "/art-history/index.html"
   }
 ];

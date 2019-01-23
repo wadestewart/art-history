@@ -1,14 +1,14 @@
 {
-  "main.css": "/art-history/static/css/main.c50ca26e.chunk.css",
-  "main.js": "/art-history/static/js/main.6b4d7cf8.chunk.js",
-  "main.js.map": "/art-history/static/js/main.6b4d7cf8.chunk.js.map",
+  "main.css": "/art-history/static/css/main.c9fafac2.chunk.css",
+  "main.js": "/art-history/static/js/main.25563f17.chunk.js",
+  "main.js.map": "/art-history/static/js/main.25563f17.chunk.js.map",
   "static/js/1.696988e9.chunk.js": "/art-history/static/js/1.696988e9.chunk.js",
   "static/js/1.696988e9.chunk.js.map": "/art-history/static/js/1.696988e9.chunk.js.map",
   "runtime~main.js": "/art-history/static/js/runtime~main.531fc8a7.js",
   "runtime~main.js.map": "/art-history/static/js/runtime~main.531fc8a7.js.map",
   "static/media/cooperhewitt.jpg": "/art-history/static/media/cooperhewitt.ab5a7244.jpg",
-  "static/css/main.c50ca26e.chunk.css.map": "/art-history/static/css/main.c50ca26e.chunk.css.map",
+  "static/css/main.c9fafac2.chunk.css.map": "/art-history/static/css/main.c9fafac2.chunk.css.map",
   "index.html": "/art-history/index.html",
-  "precache-manifest.6715abbc8ee5997bc2043e19380cee20.js": "/art-history/precache-manifest.6715abbc8ee5997bc2043e19380cee20.js",
+  "precache-manifest.5890e1fc7ef9f9f2d6a62e0d4b8e1723.js": "/art-history/precache-manifest.5890e1fc7ef9f9f2d6a62e0d4b8e1723.js",
   "service-worker.js": "/art-history/service-worker.js"
 }
