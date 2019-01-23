@@ -1,6 +1,5 @@
 .header {
     background: #000;
-    border-bottom: 1px solid #d3d3d3;
     margin: 0.5rem 0 0 0;
     position: fixed;
     top: 0;
@@ -34,6 +33,7 @@ h3 {
     and (min-width: 320px)
     and (max-width: 765px)
     and (orientation: portrait) {
+
         .header {
             margin: 0.5rem 0 0 0;
             width: 95.6%;
@@ -52,3 +52,25 @@ h3 {
             display: none;
         }
     }
+
+@media only screen 
+    and (min-width: 375px)
+    and (max-width: 812px)
+    and (orientation: landscape) {
+
+    .header {
+        width: 98%;
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    .header > nav > h2 {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: 0.75em;
+    }
+}
