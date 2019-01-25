@@ -10,6 +10,7 @@
     flex: 0 1 66.666666%;
     height: 100vh;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .art-detail {
