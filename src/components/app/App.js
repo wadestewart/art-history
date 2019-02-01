@@ -73,7 +73,7 @@ class App extends Component {
       // This function runs every 45minutes to keep Heroku's dyno from going to sleep
       setInterval(() => {
         fetch('https://art-history-back.herokuapp.com/')
-      }, 2,700,000)
+      }, 2700000)
   }
       
   render() {
