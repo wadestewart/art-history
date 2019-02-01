@@ -69,6 +69,11 @@ class App extends Component {
         this.setState({ artworks: data.objects })
       })
       .catch(err => console.log(err))
+
+      // This function runs every 45minutes to keep Heroku's dyno from going to sleep
+      setInterval(() => {
+        fetch('https://art-history-back.herokuapp.com/')
+      }, 2,700,000)
   }
       
   render() {
