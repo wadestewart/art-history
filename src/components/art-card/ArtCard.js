@@ -4,12 +4,9 @@ import Like from '../like/Like'
 import './ArtCard.css'
 
 class ArtCard extends Component {
-    constructor(props) {
-        super(props)
         
-        this.state = {
-            imageUrls: []
-        }
+    state = {
+        imageUrls: []
     }
 
     componentDidMount = () => {
