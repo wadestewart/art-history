@@ -6,7 +6,7 @@ This project is to give the user a chance to learn about artworks in the Cooper-
 The user comes to a landing page with a placeholder image of a Cooper-Hewitt museum exhibit and a list of artworks containing cards with basic information about the piece (title, medium). The list has two states, one that shows all the artworks available and another that will show all artworks the user has 'liked.' THe user can click the heart on an art card to add it to the 'likes' state. The user can click on an image to access more detailed information about the piece (description, if available, and credit) and the placeholder image will be replaced with a larger, detailed art card.
 
 ## This app is built with React, Node, Express, and utilizes the Cooper-Hewitt API.
-
+The two main components are the art list and the art detail. Within the art list are individual art cards with a like and an image component, as well as title and medium information. The 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and uses the [Cooper Hewitt API](https://collection.cooperhewitt.org/api/).

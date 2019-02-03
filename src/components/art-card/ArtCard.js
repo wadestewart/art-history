@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ArtImage from '../art-image/ArtImage'
+import SmallImage from '../small-mage/SmallImage'
 import Like from '../like/Like'
 import './ArtCard.css'
 
@@ -29,7 +29,7 @@ class ArtCard extends Component {
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
 
-                    <ArtImage
+                    <SmallImage
                         imageUrl={imageUrls}
                     />
 
@@ -49,7 +49,7 @@ class ArtCard extends Component {
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
 
-                    <ArtImage
+                    <SmallImage
                         imageUrl={imageUrls}
                     />
 
@@ -69,7 +69,7 @@ class ArtCard extends Component {
             detail = (
                 <div className="art-column" onClick={this.props.onArtDetailClick}>
 
-                    <ArtImage
+                    <SmallImage
                         imageUrl={imageUrls}
                     />
         

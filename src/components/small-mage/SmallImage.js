@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ArtImage(props) {
+function SmallImage(props) {
     return (
         <figure>
             <img src={props.imageUrl} alt="" />                
@@ -8,4 +8,4 @@ function ArtImage(props) {
     )
 }
 
-export default ArtImage
+export default SmallImage
