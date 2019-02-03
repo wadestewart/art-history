@@ -24,10 +24,15 @@ class App extends Component {
     }
   }
 
+  // Resets the image and likes state and therefore resetting to initial state
   handleReload = () => {
-    this.setState({ image: [] })
+    this.setState({
+      image: [],
+      likes: []
+    })
   }
 
+  // 
   handleShowLikes = (artwork) => {
     const likes = this.state.likes.slice()
     const artworkIndex = likes.indexOf(artwork)
