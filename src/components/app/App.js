@@ -20,7 +20,6 @@ class App extends Component {
       likes: [],
       currentIndex: 0,
       timer: 2,
-      show: false
     }
   }
 
@@ -32,7 +31,6 @@ class App extends Component {
     })
   }
 
-  // 
   handleShowLikes = (artwork) => {
     const likes = this.state.likes.slice()
     const artworkIndex = likes.indexOf(artwork)
@@ -46,7 +44,7 @@ class App extends Component {
   }
 
   handleArtDetailClick = (artwork) => {
-    fetch(`https://art-history-back.herokuapp.com/${artwork.id}`)
+    fetch(`http://54.161.211.213:5000/${artwork.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState(prevState => ({ show: !prevState.show }))
@@ -68,17 +66,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://art-history-back.herokuapp.com/')
+    fetch('http://54.161.211.213:5000/')
       .then(res => res.json())
       .then(data => {
         this.setState({ artworks: data.objects })
       })
       .catch(err => console.log(err))
-
-      // This function runs every 45minutes to keep Heroku's dyno from going to sleep
-      setInterval(() => {
-        fetch('https://art-history-back.herokuapp.com/')
-      }, 2700000)
   }
       
   render() {
