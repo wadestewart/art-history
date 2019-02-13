@@ -12,7 +12,7 @@ class ArtCard extends Component {
     componentDidMount = () => {
         let artwork = this.props.artwork
 
-        fetch(`http://54.161.211.213:5000/${artwork.id}`)
+        fetch(`http://54.161.211.213:443/${artwork.id}`)
             .then(res => res.json())
             .then(data => {
                 let newImage = data.object.images[0].n.url
