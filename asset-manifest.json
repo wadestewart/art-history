@@ -1,7 +1,7 @@
 {
   "main.css": "/art-history/static/css/main.35314bdd.chunk.css",
-  "main.js": "/art-history/static/js/main.43153c4c.chunk.js",
-  "main.js.map": "/art-history/static/js/main.43153c4c.chunk.js.map",
+  "main.js": "/art-history/static/js/main.3a4f401c.chunk.js",
+  "main.js.map": "/art-history/static/js/main.3a4f401c.chunk.js.map",
   "static/js/1.696988e9.chunk.js": "/art-history/static/js/1.696988e9.chunk.js",
   "static/js/1.696988e9.chunk.js.map": "/art-history/static/js/1.696988e9.chunk.js.map",
   "runtime~main.js": "/art-history/static/js/runtime~main.531fc8a7.js",
@@ -9,6 +9,6 @@
   "static/media/cooperhewitt.jpg": "/art-history/static/media/cooperhewitt.ab5a7244.jpg",
   "static/css/main.35314bdd.chunk.css.map": "/art-history/static/css/main.35314bdd.chunk.css.map",
   "index.html": "/art-history/index.html",
-  "precache-manifest.18a2e9c32611d35a63dab0033bc97282.js": "/art-history/precache-manifest.18a2e9c32611d35a63dab0033bc97282.js",
+  "precache-manifest.a5910a7c05be516a0390e41adf2bbf04.js": "/art-history/precache-manifest.a5910a7c05be516a0390e41adf2bbf04.js",
   "service-worker.js": "/art-history/service-worker.js"
 }
