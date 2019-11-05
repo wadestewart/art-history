@@ -12,7 +12,7 @@ class ArtCard extends Component {
     componentDidMount = () => {
         let artwork = this.props.artwork
 
-        fetch(`https://art-history-back.herokuapp.com/${artwork.id}`)
+        fetch(`http://ec2-3-90-221-208.compute-1.amazonaws.com:5000/${artwork.id}`)
             .then(res => res.json())
             .then(data => {
                 let newImage = data.object.images[0].n.url
